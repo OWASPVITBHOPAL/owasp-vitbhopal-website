@@ -10,35 +10,36 @@ const YearToggle: React.FC<YearToggleProps> = ({ selectedYear, onYearChange }) =
     const years = [2025, 2024, 2023];
 
     return (
-        <div className='flex items-center justify-center gap-3 my-8'>
-            <span className='text-sm md:text-base text-[var(--muted-text)] mr-2'>Filter by Year:</span>
-            <div className='flex gap-2'>
+        <div className='w-full my-12'>
+            <div className='w-full border-2 border-dashed border-white/12' />
+            <div className='flex items-center justify-start gap-6 mt-8 mb-4'>
                 {years.map((year) => {
-                    const isComingSoon = year === 2024 || year === 2023;
+                    const isDisabled = year === 2024 || year === 2023;
+                    const isActive = selectedYear === year;
 
                     return (
                         <button
                             key={year}
-                            onClick={() => !isComingSoon && onYearChange(year)}
-                            disabled={isComingSoon}
+                            onClick={() => !isDisabled && onYearChange(year)}
+                            disabled={isDisabled}
                             className={`
-                                px-4 py-2 rounded-lg text-sm md:text-base font-medium
-                                transition-all duration-200 ease-in-out relative
-                                ${selectedYear === year
-                                    ? 'bg-white text-black shadow-lg scale-105'
-                                    : isComingSoon
-                                    ? 'bg-transparent text-white/30 border border-white/10 cursor-not-allowed'
-                                    : 'bg-transparent text-white/70 border border-white/20 hover:border-white/40 hover:text-white/90'
+                                text-2xl md:text-3xl font-medium
+                                transition-all duration-300 ease-out
+                                relative pb-1
+                                ${isActive
+                                    ? 'text-white'
+                                    : isDisabled
+                                    ? 'text-white/20 cursor-not-allowed'
+                                    : 'text-white/40 hover:text-white/70'
                                 }
                             `}
-                            aria-label={isComingSoon ? `Year ${year} coming soon` : `Filter members by year ${year}`}
-                            aria-pressed={selectedYear === year}
+                            aria-label={`Filter members by year ${year}`}
+                            aria-pressed={isActive}
+                            aria-disabled={isDisabled}
                         >
                             {year}
-                            {isComingSoon && (
-                                <span className='absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white/50 whitespace-nowrap'>
-                                    Coming Soon
-                                </span>
+                            {isActive && (
+                                <span className='absolute bottom-0 left-0 right-0 h-0.5 bg-white' />
                             )}
                         </button>
                     );
