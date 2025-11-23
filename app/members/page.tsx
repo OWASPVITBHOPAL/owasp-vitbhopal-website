@@ -1,9 +1,8 @@
 import { Container } from '@/components/container'
 import MembersSection from '@/components/membersSection'
-import { boardMembers, designTeam, technicalTeam, eventTeam, financeTeam, prTeam, contentTeam, ecaMembers } from '@/Content/Members'
+import { boardMembers, designTeam, technicalTeam, eventTeam, financeTeam, prTeam, contentTeam } from '@/Content/Members'
 import React from 'react'
 import Header from '@/components/header'
-
 
 
 const page = () => {
@@ -20,7 +19,6 @@ Meet the dedicated team behind OWASP VIT Bhopal - passionate students committed 
         <MembersSection title="Event Team" members={eventTeam} />
         <MembersSection title="Finance Team" members={financeTeam} />
         <MembersSection title="Pr & Outreach Team" members={prTeam} />
-        <MembersSection title="ECA Members" members={ecaMembers} />
       </div>
     </Container>
   )

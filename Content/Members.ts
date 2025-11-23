@@ -240,38 +240,6 @@ const contentTeam = [
   },
 ];
 
-const ecaMembers = [
-  {
-    name: "Satvik Mittal",
-    image: "/members/satvik.png",
-    href: "mailto:satvik.24bcy10107@vitbhopal.ac.in",
-  },
-  {
-    name: "Kaushal Kant",
-    image: "/members/kaushal.png",
-    href: "mailto:kaushal.24bcy10062@vitbhopal.ac.in",
-  },
-  {
-    name: "Aniket Bose",
-    image: "/members/aniket.png",
-    href: "https://www.linkedin.com/in/aniket-bose-44b5a82a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  },
-  {
-    name: "Tanmay Bhatnagar",
-    image: "/members/tanmay.png",
-    href: "https://www.linkedin.com/in/tanmay-bhatnagar-vit/",
-  },
-  {
-    name: "Jay Pratap Singh Rajput",
-    image: "/members/jay.png",
-    href: "https://www.linkedin.com/in/jayrajput02?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  },
-  {
-    name: "Deepayan Dey",
-    image: "/members/deepayan.png",
-    href: "https://www.instagram.com/x_deep_x0007",
-  },
-];
 
 const alumni = [
   {
@@ -289,6 +257,5 @@ export {
   financeTeam,
   prTeam,
   contentTeam,
-  ecaMembers,
   alumni,
 };
