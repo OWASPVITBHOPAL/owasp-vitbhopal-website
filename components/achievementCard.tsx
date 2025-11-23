@@ -7,7 +7,6 @@ interface AchievementCardProps {
   title: string;
   subtitle?: string;
   description?: string;
-  gradientClass?: string;
 }
 
 export default function AchievementCard({
@@ -15,7 +14,6 @@ export default function AchievementCard({
   title,
   subtitle,
   description,
-  gradientClass,
 }: AchievementCardProps) {
   return (
     <div className="group relative w-full rounded-2xl border border-gray-600/40 p-4 flex items-start gap-6 overflow-visible bg-white/5 backdrop-blur-[75px]">

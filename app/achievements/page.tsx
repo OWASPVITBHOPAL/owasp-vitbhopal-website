@@ -22,11 +22,6 @@ export default function Achievements() {
             title={achievement.title}
             description={achievement.description}
             image={achievement.imgUrl}
-            gradientClass={
-              index % 2 === 0
-                ? "bg-gradient-to-br from-orange-500 to-transparent"
-                : "bg-gradient-to-br from-blue-500 to-cyan-400"
-            }
           />
         ))}
       </div>
