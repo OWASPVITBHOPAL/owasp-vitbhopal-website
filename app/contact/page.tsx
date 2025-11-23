@@ -3,6 +3,14 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import React, { useState } from "react";
 import Header from '@/components/header'
+import { socialMediaLinks } from "@/Content/LayoutElements";
+import {
+  IconBrandInstagramFilled,
+  IconBrandLinkedinFilled,
+  IconBrandGithubFilled,
+  IconBrandDiscordFilled,
+  IconBrandXFilled
+} from "@tabler/icons-react";
 
 
 
@@ -51,9 +59,9 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-y-4" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-y-4 h-full" onSubmit={handleSubmit}>
       <input
-        className="border-2 border-[var(--border)] rounded-2xl p-4 text-white"
+        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors"
         type="text"
         name="name"
         placeholder="Name"
@@ -62,7 +70,7 @@ const ContactForm = () => {
         required
       />
       <input
-        className="border-2 border-[var(--border)] rounded-2xl p-4 text-white"
+        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors"
         type="email"
         name="email"
         placeholder="Email"
@@ -71,10 +79,10 @@ const ContactForm = () => {
         required
       />
       <textarea
-        className="border-2 border-[var(--border)] rounded-2xl p-4 text-white"
+        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none flex-1"
         name="message"
         placeholder="Message"
-        rows={6}
+        rows={7}
         value={form.message}
         onChange={handleChange}
         required
@@ -86,13 +94,23 @@ const ContactForm = () => {
   );
 };
 
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  IconBrandInstagramFilled,
+  IconBrandLinkedinFilled,
+  IconBrandGithubFilled,
+  IconBrandDiscordFilled,
+  IconBrandXFilled,
+};
+
 const page = () => {
   return (
     <Container className="min-h-screen px-4 md:px-6 lg:px-8">
       <Header title='Contact Us'>
-        Have questions or want to collaborate? We&apos;d love to hear from you. Reach out to the OWASP VIT Bhopal team and connect with our cybersecurity community.
+        Over the years we&apos;ve transformed the face of cybersecurity, thereby achieving various undisputed accomplishments in the field.
       </Header>
 
+    <h2 className='md:text-4xl text-[#1b1a1d] text-3xl font-medium'> .</h2>
+      <div className='w-full border-2 my-4 border-dashed border-white/12' />
 
       <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 px-0 md:px-8 lg:px-16 mt-8 md:mt-16">
         <div className="w-full lg:w-2/5">
