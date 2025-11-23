@@ -19,7 +19,12 @@ const MemberCard: React.FC<MemberCardProps> = ({ image, name, position, alt, hre
     };
 
     return (
-        <Link href={href} target="_blank" rel="owasp Vit Bhopal">
+        <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${name}'s profile`}
+        >
             <div className='md:w-63 md:h-74 w-45 h-60 border rounded-2xl border-[var(--border)] relative overflow-hidden group cursor-pointer'>
                 {/* Background Image */}
                 <Image
