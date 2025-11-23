@@ -53,7 +53,9 @@ const SocialIcon = ({ name, size = 20 }: { name: string; size?: number }) => {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1b1a1d] border-t border-white/10">
+    <footer className="bg-[#1b1a1d] border-t border-white/10 relative">
+      {/* Subtle animated glow on top border */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse-glow origin-center" />
       <Container className="px-4 sm:px-6 md:px-8">
         <div className="py-8 sm:py-12 md:py-16">
 
