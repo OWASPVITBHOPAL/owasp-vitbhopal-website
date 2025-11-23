@@ -53,90 +53,67 @@ const SocialIcon = ({ name, size = 20 }: { name: string; size?: number }) => {
 
 const Footer = () => {
   return (
-    <div className="mt-16 md:mt-24 lg:mt-32 relative z-10">
+    <div className="mt-16 md:mt-24 lg:mt-32 relative">
       <Container className="px-4 md:px-6 lg:px-8">
-        <div className="bg-gradient-to-b flex flex-col rounded-t-2xl px-4 md:px-6 lg:px-10 py-6 md:py-8 from-[#999] to-white w-full relative">
-          <div className="flex flex-col md:flex-row justify-between items-start mb-4 md:mb-6 gap-4 md:gap-4">
-            <div className="flex flex-col gap-1 w-full md:w-auto">
-              <div className="flex flex-wrap gap-2 md:gap-0">
-                {footerItems.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className="text-sm md:text-lg font-medium text-[var(--text-colour)]/80 hover:text-[var(--text-colour)] mr-3 md:mr-6 mb-1"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2 md:gap-0">
-                {extraFooterItems.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className="text-sm md:text-lg font-medium text-[var(--text-colour)]/80 hover:text-[var(--text-colour)] mr-3 md:mr-6 mb-1"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className="flex gap-3 items-center justify-start md:justify-end w-full md:w-auto">
+        {/* Gradient overlay effect */}
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+        <div className="relative border-t-2 border-white/10 bg-gradient-to-b from-white/[0.02] to-transparent backdrop-blur-sm">
+          {/* Main footer content */}
+          <div className="flex flex-col items-center text-center py-12 md:py-16 gap-8">
+
+            {/* Social Links */}
+            <div className="flex gap-4 items-center">
               {socialMediaLinks.map((item, idx) => (
-                <div
+                <a
                   key={idx}
-                  className="p-2 rounded-full bg-black hover:bg-gray-800 flex justify-center items-center transition-colors duration-200"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center group"
+                  aria-label={item.name}
                 >
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-gray-300 flex items-center justify-center"
-                    aria-label={item.name}
-                  >
-                    <SocialIcon name={item.name} size={20} />
-                  </a>
-                </div>
+                  <SocialIcon name={item.name} size={18} />
+                </a>
               ))}
             </div>
-          </div>
 
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mt-2 lg:mt-4 w-full gap-4 lg:gap-6">
-            <div className="flex flex-col gap-2 w-full lg:w-auto">
-              <button className="bg-black text-white px-4 py-2 rounded-2xl text-sm md:text-base lg:text-lg font-medium w-fit mb-2">
-                Contact us
-              </button>
-              <div className="text-xs md:text-sm lg:text-base text-black/80">
-                Email: owaspclub@vitbhopal.ac.in
-              </div>
-              <div className="text-xs md:text-sm lg:text-base text-black/80">
-                Phone: +91 0000000000
-              </div>
-            </div>
-            <form className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-center w-full lg:w-auto lg:max-w-md">
-              <input
-                type="email"
-                placeholder="Email"
-                className="px-3 md:px-4 lg:px-6 py-2 lg:py-3 rounded-xl border border-black bg-transparent text-black text-sm md:text-base lg:text-lg focus:outline-none w-full sm:min-w-[200px] md:min-w-[220px]"
-              />
-              <button
-                type="submit"
-                className="bg-black text-white px-4 md:px-6 lg:px-8 py-2 lg:py-3 rounded-xl text-sm md:text-base lg:text-lg font-semibold hover:bg-gray-800 transition-colors whitespace-nowrap"
+            {/* Navigation Links */}
+            <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:text-base">
+              {footerItems.map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.href}
+                  className="text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+
+            {/* Divider */}
+            <div className="w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+            {/* Contact & Copyright */}
+            <div className="flex flex-col items-center gap-3">
+              <a
+                href="mailto:owaspclub@vitbhopal.ac.in"
+                className="text-white/80 hover:text-white text-sm md:text-base transition-colors duration-200"
               >
-                Subscribe
-              </button>
-            </form>
-          </div>
-          <div className="border-t border-black/30 mt-4 md:mt-6 pt-3 md:pt-4 flex flex-col md:flex-row items-center justify-between text-black/80 text-xs md:text-sm lg:text-base gap-2 md:gap-4">
-            <div className="text-center md:text-left order-2 md:order-1">
-              © {new Date().getFullYear()} OWASP All Rights Reserved
+                owaspclub@vitbhopal.ac.in
+              </a>
+
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs md:text-sm text-white/40">
+                <span>© {new Date().getFullYear()} OWASP VIT Bhopal</span>
+                <span className="hidden sm:inline">•</span>
+                <a
+                  href="/privacy-policy"
+                  className="hover:text-white/60 transition-colors duration-200"
+                >
+                  Privacy Policy
+                </a>
+              </div>
             </div>
-            <a
-              href="/privacy-policy"
-              className="hover:underline text-center md:text-right order-1 md:order-2"
-            >
-              Privacy Policy
-            </a>
           </div>
         </div>
       </Container>
