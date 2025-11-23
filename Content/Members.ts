@@ -9,7 +9,7 @@ const boardMembers = [
     name: "Sanidhya Soni",
     position: "President",
     image: "/members/sanidhya.png",
-    href: "mailto:sanidhyasoni2022@vitbhopal.ac.in",
+    href: "mailto:sanidhya.soni@owasp.org",
   },
   {
     name: "Amar Saroha",
