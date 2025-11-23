@@ -11,6 +11,8 @@ import {
   IconBrandDiscordFilled,
   IconBrandXFilled
 } from "@tabler/icons-react";
+import { toast } from "sonner";
+import { CustomToaster } from "@/components/custom-toaster";
 
 
 
@@ -21,22 +23,16 @@ const ContactForm = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setSuccess("");
-    setError("");
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess("");
-    setError("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -46,13 +42,13 @@ const ContactForm = () => {
       });
       const data = await res.json();
       if (data.success) {
-        setSuccess("Message sent successfully!");
+        toast.success("Message sent successfully!");
         setForm({ name: "", email: "", message: "" });
       } else {
-        setError(data.error || "Failed to send message.");
+        toast.error(data.error || "Failed to send message.");
       }
     } catch (err) {
-      setError("Failed to send message.");
+      toast.error("Failed to send message.");
     } finally {
       setLoading(false);
     }
@@ -88,8 +84,6 @@ const ContactForm = () => {
         required
       ></textarea>
       <Button>{loading ? "Sending..." : "Send Message"}</Button>
-      {success && <div className="text-green-500 text-sm mt-2">{success}</div>}
-      {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
     </form>
   );
 };
@@ -105,6 +99,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 const page = () => {
   return (
     <Container className="min-h-screen px-4 md:px-6 lg:px-8">
+      <CustomToaster />
+      
       <Header title='Contact Us'>
 Have questions or want to collaborate? We'd love to hear from you. Reach out to the OWASP VIT Bhopal team and connect with our cybersecurity community.      </Header>
 
