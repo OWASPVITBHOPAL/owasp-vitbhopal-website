@@ -53,71 +53,105 @@ const SocialIcon = ({ name, size = 20 }: { name: string; size?: number }) => {
 
 const Footer = () => {
   return (
-    <div className="mt-16 md:mt-24 lg:mt-32 relative">
+    <footer className="mt-16 md:mt-24 lg:mt-32">
       <Container className="px-4 md:px-6 lg:px-8">
-        {/* Gradient overlay effect */}
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="border-2 border-white/10 rounded-3xl bg-white/5 backdrop-blur-lg p-6 md:p-10 lg:p-12">
 
-        <div className="relative border-t-2 border-white/10 bg-gradient-to-b from-white/[0.02] to-transparent backdrop-blur-sm">
-          {/* Main footer content */}
-          <div className="flex flex-col items-center text-center py-12 md:py-16 gap-8">
+          {/* Top section - Grid layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-8">
 
-            {/* Social Links */}
-            <div className="flex gap-4 items-center">
-              {socialMediaLinks.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center group"
-                  aria-label={item.name}
-                >
-                  <SocialIcon name={item.name} size={18} />
-                </a>
-              ))}
+            {/* Column 1: Branding */}
+            <div className="flex flex-col gap-3">
+              <h3 className="text-xl md:text-2xl font-bold text-white">OWASP</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                VIT Bhopal&apos;s premier cybersecurity community dedicated to learning and innovation.
+              </p>
+              <a
+                href="https://discord.gg/wf355sQMnz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center justify-center px-4 py-2 bg-white text-black rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors w-fit"
+              >
+                Join Discord
+              </a>
             </div>
 
-            {/* Navigation Links */}
-            <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:text-base">
-              {footerItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.href}
-                  className="text-white/60 hover:text-white transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </nav>
+            {/* Column 2: Quick Links */}
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
+              <nav className="flex flex-col gap-2">
+                {footerItems.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    className="text-white/60 hover:text-white text-sm transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </nav>
+            </div>
 
-            {/* Divider */}
-            <div className="w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            {/* Column 3: Resources */}
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm md:text-base">Resources</h4>
+              <nav className="flex flex-col gap-2">
+                {extraFooterItems.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    className="text-white/60 hover:text-white text-sm transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </nav>
+            </div>
 
-            {/* Contact & Copyright */}
-            <div className="flex flex-col items-center gap-3">
+            {/* Column 4: Contact */}
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm md:text-base">Get in Touch</h4>
               <a
                 href="mailto:owaspclub@vitbhopal.ac.in"
-                className="text-white/80 hover:text-white text-sm md:text-base transition-colors duration-200"
+                className="text-white/80 hover:text-white text-sm block mb-4 transition-colors"
               >
                 owaspclub@vitbhopal.ac.in
               </a>
 
-              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs md:text-sm text-white/40">
-                <span>© {new Date().getFullYear()} OWASP VIT Bhopal</span>
-                <span className="hidden sm:inline">•</span>
-                <a
-                  href="/privacy-policy"
-                  className="hover:text-white/60 transition-colors duration-200"
-                >
-                  Privacy Policy
-                </a>
+              {/* Social Icons */}
+              <div className="flex flex-wrap gap-3 mt-4">
+                {socialMediaLinks.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 flex items-center justify-center transition-all"
+                    aria-label={item.name}
+                  >
+                    <SocialIcon name={item.name} size={20} />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
+
+          {/* Bottom section - Copyright */}
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+            <p>© {new Date().getFullYear()} OWASP VIT Bhopal. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="/privacy-policy" className="hover:text-white/60 transition-colors">
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+
         </div>
       </Container>
-    </div>
+
+      {/* Bottom padding */}
+      <div className="h-8" />
+    </footer>
   );
 };
 
