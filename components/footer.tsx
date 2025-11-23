@@ -68,7 +68,7 @@ const Footer = () => {
               </svg>
               </div>
               <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                We offer a dedicated platform to showcase innovations and provide education in information security, data protection, and privacy, fostering awareness and collaboration across industries.
+                The OWASP VIT Bhopal University Student Chapter is dedicated to advancing web application security through education, research, and hands-on practice in the field of cybersecurity.
               </p>
             </div>
 
@@ -125,12 +125,6 @@ const Footer = () => {
               <a href="/privacy-policy" className="hover:text-white transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="/terms" className="hover:text-white transition-colors duration-200">
-                Terms & Conditions
-              </a>
-              <a href="/legal" className="hover:text-white transition-colors duration-200">
-                Legal
-              </a>
             </div>
 
             {/* Social Media Icons - Right */}
@@ -144,7 +138,7 @@ const Footer = () => {
                   className="text-white/70 hover:text-white transition-colors duration-200"
                   aria-label={item.name}
                 >
-                  <SocialIcon name={item.name} size={20} />
+                  <SocialIcon name={item.name} size={28} />
                 </a>
               ))}
             </div>
