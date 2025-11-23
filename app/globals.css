@@ -29,16 +29,16 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% {
-    opacity: 0.2;
-    transform: scaleX(0.95);
+    opacity: 0.4;
+    transform: scaleX(0.98);
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.7;
     transform: scaleX(1);
   }
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15), 0 0 24px rgba(255, 255, 255, 0.08);
 }
