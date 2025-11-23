@@ -8,7 +8,7 @@ type ButtonProps = {
 };
 
 export const Button = ({ children, href, onClick }: ButtonProps) => {
-  const className = 'flex h-10 w-auto px-7 justify-center items-center rounded-full bg-white font-bold text-[var(--text-colour)] text-sm ';
+  const className = 'flex h-10 w-auto px-7 justify-center items-center rounded-2xl bg-white font-bold text-[var(--text-colour)] text-sm ';
   
   if (href) {
     return (
