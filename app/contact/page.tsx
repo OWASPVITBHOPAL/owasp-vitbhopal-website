@@ -42,7 +42,7 @@ const ContactForm = () => {
       });
       const data = await res.json();
       if (data.success) {
-        toast.success("Message sent successfully!");
+        toast.success("Thank you for reaching out, expect a response soon! Keep an eye out on your inbox !");
         setForm({ name: "", email: "", message: "" });
       } else {
         toast.error(data.error || "Failed to send message.");
