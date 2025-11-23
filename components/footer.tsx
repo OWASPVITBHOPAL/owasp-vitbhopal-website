@@ -106,9 +106,12 @@ const Footer = () => {
               <button className="bg-black text-white px-4 py-2 rounded-2xl text-sm md:text-base lg:text-lg font-medium w-fit mb-2">
                 Contact us
               </button>
-              <div className="text-xs md:text-sm lg:text-base text-black/80">
-                Email: OWASP@gamil.com
-              </div>
+              <a
+                href="mailto:owaspclub@vitbhopal.ac.in"
+                className="text-xs md:text-sm lg:text-base text-black/80 hover:text-black hover:underline transition-colors"
+              >
+                Email: owaspclub@vitbhopal.ac.in
+              </a>
               <div className="text-xs md:text-sm lg:text-base text-black/80">
                 Phone: +91 0000000000
               </div>

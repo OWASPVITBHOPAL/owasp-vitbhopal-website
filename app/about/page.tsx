@@ -6,7 +6,7 @@ const page = () => {
   return (
     <Container className='min-h-screen overflow-x-hidden px-4 md:px-6 lg:px-8'>
       <Header title='About Us'>
-        Over the years we&#39;ve transformed the face of cybersecurity, therby therefore realise regardless thereafter unrestored underestimated variety of various undisputed achievments
+        The OWASP VIT Bhopal University Student Chapter is dedicated to advancing web application security through education, research, and hands-on practice in the field of cybersecurity.
       </Header>
 
       <div className='mt-20 w-fit'>

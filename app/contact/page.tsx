@@ -90,7 +90,7 @@ const page = () => {
   return (
     <Container className="min-h-screen px-4 md:px-6 lg:px-8">
       <Header title='Contact Us'>
-        Over the years we&apos;ve transformed the face of cybersecurity, therby therefore realise regardless thereafter unrestored underestimated variety of various undisputed achievments
+        Have questions or want to collaborate? We&apos;d love to hear from you. Reach out to the OWASP VIT Bhopal team and connect with our cybersecurity community.
       </Header>
 
 
