@@ -94,16 +94,22 @@ const page = () => {
       </Header>
 
 
-      <div className="w-[75%] mx-auto flex gap-4 px-16 mt-16 ">
-        <div className="w-2/5">
-          <div className="flex flex-col gap-4 font-bold mb-8 border-2 border-[var(--border)] p-4 rounded-2xl">
-            <div className="text-4xl font-semibold">Get in Touch</div>
-            <div className="text-lg font-medium text-[var(--muted)] leading-6">
+      <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 px-0 md:px-8 lg:px-16 mt-8 md:mt-16">
+        <div className="w-full lg:w-2/5">
+          <div className="flex flex-col gap-4 font-bold mb-8 border-2 border-[var(--border)] p-4 md:p-6 rounded-2xl">
+            <div className="text-2xl md:text-4xl font-semibold">Get in Touch</div>
+            <div className="text-base md:text-lg font-medium text-[var(--muted)] leading-6">
               Do you have any questions? or do you have any suggestions for us?
             </div>
-            <div className="flex flex-start p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-4">
+
+            {/* Email Contact */}
+            <a
+              href="mailto:owaspclub@vitbhopal.ac.in"
+              className="flex flex-start p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-4 hover:border-white/30 transition-colors"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                className="flex-shrink-0"
                 width="32"
                 height="26"
                 viewBox="0 0 32 26"
@@ -118,39 +124,55 @@ const page = () => {
                   fill="white"
                 />
               </svg>
-              <div className="text-xl font-semibold">Mail</div>
-            </div>
+              <div>
+                <div className="text-lg md:text-xl font-semibold">Email</div>
+                <div className="text-sm text-[var(--muted)] font-normal">owaspclub@vitbhopal.ac.in</div>
+              </div>
+            </a>
+
+            {/* Phone Contact */}
             <div className="flex flex-start p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                className="flex-shrink-0"
                 width="32"
                 height="26"
-                viewBox="0 0 32 26"
+                viewBox="0 0 24 24"
                 fill="none"
+                stroke="white"
+                strokeWidth="2"
               >
-                <path
-                  d="M31.8337 5.93042V20.9167C31.8337 22.1283 31.3708 23.2941 30.5396 24.1756C29.7084 25.0571 28.5718 25.5877 27.3623 25.6588L27.0837 25.6667H4.91699C3.70541 25.6667 2.53959 25.2038 1.65808 24.3726C0.776565 23.5415 0.245989 22.4048 0.174909 21.1953L0.166992 20.9167V5.93042L15.1216 15.9007L15.3052 16.0052C15.5217 16.1109 15.7594 16.1659 16.0003 16.1659C16.2412 16.1659 16.479 16.1109 16.6954 16.0052L16.8791 15.9007L31.8337 5.93042Z"
-                  fill="white"
-                />
-                <path
-                  d="M27.0832 0.333313C28.7932 0.333313 30.2926 1.23581 31.1286 2.59273L15.9998 12.6786L0.871094 2.59273C1.26818 1.94803 1.81364 1.40761 2.46198 1.0165C3.11033 0.625404 3.84278 0.394964 4.59826 0.344396L4.91651 0.333313H27.0832Z"
-                  fill="white"
-                />
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              <div className="text-xl font-semibold">Mail</div>
+              <div>
+                <div className="text-lg md:text-xl font-semibold">Phone</div>
+                <div className="text-sm text-[var(--muted)] font-normal">Contact coming soon</div>
+              </div>
             </div>
+
+            {/* Location */}
             <div className="flex flex-start p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-4">
-              <div className="flex gap-4 items-center justify-between p-5 w-full relative">
-                <div className="h-full aspect-square ">O</div>
-                <div className="h-full aspect-square ">W</div>
-                <div className="h-full aspect-square ">A</div>
-                <div className="h-full aspect-square ">S</div>
-                <div className="h-full aspect-square ">P</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="flex-shrink-0"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <div className="text-lg md:text-xl font-semibold">Location</div>
+                <div className="text-sm text-[var(--muted)] font-normal">VIT Bhopal University</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-3/5">
+        <div className="w-full lg:w-3/5">
           <ContactForm />
         </div>
       </div>
