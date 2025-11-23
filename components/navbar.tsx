@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { navItems } from '@/Content/LayoutElements'
 import { Container } from './container'
 import { Button } from './button'
@@ -7,6 +8,7 @@ import Link from 'next/link'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const pathname = usePathname()
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -28,11 +30,23 @@ const Navbar = () => {
 
                 {/* Desktop Navigation */}
                 <div className='justify-center font-bold gap-8 hidden md:flex'>
-                    {navItems.map((item, index) => (
-                        <a key={index} href={item.href}>
-                            {item.name}
-                        </a>
-                    ))}
+                    {navItems.map((item, index) => {
+                        const isActive = pathname === item.href
+                        return (
+                            <a
+                                key={index}
+                                href={item.href}
+                                className={`transition-colors hover:text-white/80 ${
+                                    isActive
+                                        ? 'text-white border-b-2 border-white pb-1'
+                                        : 'text-white/90'
+                                }`}
+                                aria-current={isActive ? 'page' : undefined}
+                            >
+                                {item.name}
+                            </a>
+                        )
+                    })}
                 </div>
 
                 {/* Desktop Contact Button */}
@@ -57,16 +71,24 @@ const Navbar = () => {
             {/* Mobile Full Screen Menu */}
             <div className={`fixed inset-0 bg-black bg-opacity-95 backdrop-blur-md z-40 transition-all duration-300 md:hidden ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                 <div className="flex flex-col items-center justify-center h-full space-y-8">
-                    {navItems.map((item, index) => (
-                        <a
-                            key={index}
-                            href={item.href}
-                            className="text-white text-2xl font-medium hover:text-gray-300 transition-colors"
-                            onClick={closeMenu}
-                        >
-                            {item.name}
-                        </a>
-                    ))}
+                    {navItems.map((item, index) => {
+                        const isActive = pathname === item.href
+                        return (
+                            <a
+                                key={index}
+                                href={item.href}
+                                className={`text-2xl font-medium transition-colors ${
+                                    isActive
+                                        ? 'text-white border-b-2 border-white pb-1'
+                                        : 'text-white/90 hover:text-gray-300'
+                                }`}
+                                aria-current={isActive ? 'page' : undefined}
+                                onClick={closeMenu}
+                            >
+                                {item.name}
+                            </a>
+                        )
+                    })}
                     <div className="mt-8">
                         <Button href="/contact" onClick={closeMenu}>
                             Contact Us

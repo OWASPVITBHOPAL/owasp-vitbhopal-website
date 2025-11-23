@@ -107,7 +107,7 @@ const Footer = () => {
                 Contact us
               </button>
               <div className="text-xs md:text-sm lg:text-base text-black/80">
-                Email: OWASP@gamil.com
+                Email: owaspclub@vitbhopal.ac.in
               </div>
               <div className="text-xs md:text-sm lg:text-base text-black/80">
                 Phone: +91 0000000000

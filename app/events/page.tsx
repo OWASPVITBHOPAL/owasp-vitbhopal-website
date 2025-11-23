@@ -9,8 +9,7 @@ const page = () => {
   return (
     <Container>
       <Header title='Events'>
-        Over the years we&apos;ve transformed the face of cybersecurity, therby therefore realise regardless thereafter unrestored underestimated variety of various undisputed achievments
-      </Header>
+Explore our workshops, CTF competitions, and training programs designed to build practical cybersecurity skills and foster a culture of security awareness.      </Header>
 
 
       <h2 className='md:text-4xl text-3xl font-medium'>Past Events</h2>

@@ -61,7 +61,7 @@ const ContactForm = () => {
   return (
     <form className="flex flex-col gap-y-4 h-full" onSubmit={handleSubmit}>
       <input
-        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors"
+        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-3 md:p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors text-sm md:text-base"
         type="text"
         name="name"
         placeholder="Name"
@@ -70,7 +70,7 @@ const ContactForm = () => {
         required
       />
       <input
-        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors"
+        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-3 md:p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors text-sm md:text-base"
         type="email"
         name="email"
         placeholder="Email"
@@ -79,7 +79,7 @@ const ContactForm = () => {
         required
       />
       <textarea
-        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none flex-1"
+        className="border-2 border-[var(--border)] bg-transparent rounded-2xl p-3 md:p-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none flex-1 text-sm md:text-base"
         name="message"
         placeholder="Message"
         rows={7}
@@ -106,31 +106,30 @@ const page = () => {
   return (
     <Container className="min-h-screen px-4 md:px-6 lg:px-8">
       <Header title='Contact Us'>
-        Over the years we&apos;ve transformed the face of cybersecurity, thereby achieving various undisputed accomplishments in the field.
-      </Header>
+Have questions or want to collaborate? We'd love to hear from you. Reach out to the OWASP VIT Bhopal team and connect with our cybersecurity community.      </Header>
 
-    <h2 className='md:text-4xl text-[#1b1a1d] text-3xl font-medium'> .</h2>
+    <h2 className='text-3xl md:text-4xl text-[#1b1a1d] font-medium'> .</h2>
       <div className='w-full border-2 my-4 border-dashed border-white/12' />
 
-      <div className="max-w-5xl mx-auto mt-16">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+      <div className="max-w-5xl mx-auto mt-8 md:mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-8">
           {/* Left Side - Contact Info */}
           <div className="lg:col-span-2">
-            <div className="flex flex-col justify-between gap-4 border-2 border-[var(--border)] p-6 rounded-2xl bg-white/5 backdrop-blur-sm h-full">
-              <div className="text-3xl md:text-4xl font-normal">Get in Touch</div>
-              <div className="text-base md:text-base font-light text-[var(--muted)] leading-6">
+            <div className="flex flex-col justify-between gap-3 md:gap-4 border-2 border-[var(--border)] p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm h-full">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-normal">Get in Touch</div>
+              <div className="text-sm md:text-base font-light text-[var(--muted)] leading-6">
                 Do you have any questions or suggestions for us? We&apos;d love to hear from you!
               </div>
 
               {/* Email */}
-              <div className="flex flex-start p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-2 bg-white/5 hover:bg-white/10 transition-colors">
+              <div className="flex flex-start p-3 md:p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-2 bg-white/5 hover:bg-white/10 transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="16"
                   viewBox="0 0 32 26"
                   fill="none"
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5"
                 >
                   <path
                     d="M31.8337 5.93042V20.9167C31.8337 22.1283 31.3708 23.2941 30.5396 24.1756C29.7084 25.0571 28.5718 25.5877 27.3623 25.6588L27.0837 25.6667H4.91699C3.70541 25.6667 2.53959 25.2038 1.65808 24.3726C0.776565 23.5415 0.245989 22.4048 0.174909 21.1953L0.166992 20.9167V5.93042L15.1216 15.9007L15.3052 16.0052C15.5217 16.1109 15.7594 16.1659 16.0003 16.1659C16.2412 16.1659 16.479 16.1109 16.6954 16.0052L16.8791 15.9007L31.8337 5.93042Z"
@@ -141,20 +140,21 @@ const page = () => {
                     fill="white"
                   />
                 </svg>
-                <div className="text-lg md:text-lg font-semibold">owaspclub@vitbhopal.ac.in</div>
+                <div className="text-sm md:text-base lg:text-lg font-semibold break-all">owaspclub@vitbhopal.ac.in</div>
               </div>
 
-              <div className="flex flex-start p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-2 bg-white/5 hover:bg-white/10 transition-colors">
-                <svg width="20" height="20" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Phone */}
+              <div className="flex flex-start p-3 md:p-4 rounded-2xl items-center border-2 border-[var(--border)] gap-x-2 bg-white/5 hover:bg-white/10 transition-colors">
+                <svg width="20" height="20" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5">
                   <path d="M29.0191 35.625C27.5703 35.625 25.5352 35.1011 22.4878 33.3985C18.7821 31.3204 15.9158 29.4018 12.2301 25.7257C8.67646 22.1744 6.94717 19.8751 4.52689 15.4709C1.79267 10.4983 2.25877 7.89172 2.77978 6.7777C3.40025 5.44622 4.31611 4.64985 5.4999 3.85942C6.17228 3.41888 6.88383 3.04124 7.62552 2.73129C7.69974 2.69938 7.76877 2.66895 7.83037 2.64149C8.19775 2.47598 8.75439 2.22586 9.45947 2.49305C9.93002 2.66969 10.3501 3.03114 11.0077 3.68055C12.3562 5.01055 14.1991 7.97262 14.8789 9.42731C15.3354 10.4077 15.6374 11.0549 15.6382 11.7808C15.6382 12.6306 15.2107 13.2859 14.6919 13.9932C14.5947 14.1261 14.4982 14.253 14.4047 14.3762C13.8399 15.1184 13.7159 15.3329 13.7976 15.7159C13.9631 16.4855 15.1973 18.7766 17.2257 20.8006C19.2541 22.8245 21.4792 23.9809 22.2518 24.1456C22.6511 24.231 22.8701 24.1018 23.636 23.517C23.7458 23.4331 23.8586 23.3463 23.9767 23.2595C24.7678 22.6709 25.3928 22.2545 26.2225 22.2545H26.227C26.9491 22.2545 27.5674 22.5677 28.5916 23.0843C29.9275 23.7582 32.9786 25.5773 34.3168 26.9274C34.9677 27.5834 35.3306 28.002 35.508 28.4718C35.7752 29.1791 35.5236 29.7336 35.3596 30.1047C35.3321 30.1663 35.3017 30.2338 35.2698 30.3088C34.9574 31.0491 34.5775 31.7592 34.135 32.4299C33.346 33.61 32.5467 34.5236 31.2122 35.1449C30.527 35.469 29.7771 35.6332 29.0191 35.625Z" fill="white" />
                 </svg>
 
-                <div className="text-lg md:text-lg font-semibold">+91 00000000</div>
+                <div className="text-sm md:text-base lg:text-lg font-semibold">+91 00000000</div>
               </div>
 
               {/* Social Media Links */}
               <div className="flex flex-col gap-auto">
-                <div className="flex gap-6 flex-wrap">
+                <div className="flex w-full justify-between">
                   {socialMediaLinks.map((social) => {
                     const IconComponent = iconMap[social.icon];
                     return (
