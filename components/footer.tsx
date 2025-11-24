@@ -67,7 +67,7 @@ const Footer = () => {
               </svg>
             </div>
             <p className="text-white/60 text-sm leading-relaxed">
-              VIT Bhopal's premier cybersecurity community dedicated to learning and innovation.
+              VIT Bhopal&apos;s premier cybersecurity community dedicated to learning and innovation.
             </p>
           </div>
 
