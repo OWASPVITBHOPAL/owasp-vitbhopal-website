@@ -52,11 +52,11 @@ const Page = () => {
       <Header title='Our Members'>
         Meet the dedicated team behind OWASP VIT Bhopal - passionate students committed to making the digital world more secure through innovation and collaboration.
       </Header>
-
+{/* 
       <YearToggle
         selectedYear={selectedYear}
         onYearChange={setSelectedYear}
-      />
+      /> */}
 
       <div>
         {filteredBoardMembers.length > 0 && <MembersSection title="Board Members" members={filteredBoardMembers} />}

@@ -16,7 +16,7 @@ interface MembersSectionProps {
 
 const MembersSection: React.FC<MembersSectionProps> = ({ title, members }) => {
     return (
-        <div className='my-16 w-full max-w-full'>
+        <div className='mt-16 w-full max-w-full'>
             <h2 className='md:text-4xl text-3xl font-medium'>{title}</h2>
             <div className='w-full border-2 my-4 border-dashed border-white/12' />
             

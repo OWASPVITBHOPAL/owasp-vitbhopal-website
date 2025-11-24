@@ -10,7 +10,7 @@ const Achievement = () => {
         <h1 className="text-white font-figtree text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-tight lg:leading-[81px] not-italic">
           Our Achievements
         </h1>
-        <div className="w-full h-[2px] bg-white/12" />
+        <div className="w-full h-[2px] bg-white/12" ></div>
         <div className="text-sm md:text-base font-normal text-[var(--muted-text)]">
           Over the years we&apos;ve transformed the face of cybersecurity, therby
           therefore realise regardless thereafter unrestored underestimated
