@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/heroSection";
 import EventSection from "@/components/sections/eventSection";
+import CarouselSection from "@/components/sections/CarouselSection";
 import Achievement from "@/components/sections/achievement";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <>
       <HeroSection />
       <EventSection />
+      <CarouselSection />
       {/* <Achievement /> */}
     </>
   );
