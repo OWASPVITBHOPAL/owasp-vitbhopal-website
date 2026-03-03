@@ -4,6 +4,7 @@ const navItems = [
   { name: "Members", href: "/members" },
   // { name: "Achievements", href: "/achievements" },
   { name: "Events", href: "/events" },
+  { name: "Sponsors", href: "/sponsor" },
   { name: "Blog", href: "/blog" },
 ];
 
@@ -13,6 +14,7 @@ const footerItems = [
   { name: "Members", href: "/members" },
   // { name: "Achievements", href: "/achievements" },
   { name: "Events", href: "/events" },
+  { name: "Sponsors", href: "/sponsor" },
 ];
 
 const extraFooterItems = [
