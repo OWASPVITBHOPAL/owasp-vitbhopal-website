@@ -1,0 +1,24 @@
+---
+title: "Deep Dive Subpost"
+description: "A sub-article used to test nested blog routing and markdown rendering."
+date: "2026-03-02"
+author: "Test Runner"
+---
+
+# Deep Dive Subpost
+
+This is a **subpost** under the `headbanger-blogs` topic. It exists so you can test the nested route `/blog/headbanger-blogs/deep-dive` and make sure sub-articles render correctly.
+
+## Subpost Features
+
+- Uses its own frontmatter
+- Lives in a nested folder under the main blog
+- Renders with the same `MDXComponents`
+
+```ts
+export function subpostExample() {
+  return "This is a subpost";
+}
+```
+
+> If you can read this subpost in the browser, nested routing is working.

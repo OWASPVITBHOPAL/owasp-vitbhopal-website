@@ -1,0 +1,50 @@
+---
+title: "GeoOsint Challenge"
+description: "A detailed walkthrough of the geolocation and OSINT challenge from HackHaul 2026."
+date: "2026-03-04"
+author: "Saurabh Sharma"
+---
+
+# GeoOsint Challenge Writeup
+
+**Category:** OSINT  
+**Points:** 250  
+**Author:** Saurabh Sharma
+
+## Challenge Description
+"We received this suspicious photo from an unknown source. Can you tell us where this person was standing?"
+
+**Attached Image:** `view.jpg`
+
+## Step 1: Analyzing the Image
+The image showed a distinct bridge in the background, a specific type of street lamp, and a blurry sign.
+
+### Key Details
+- **Bridge:** Cable-stayed bridge design.
+- **Vegetation:** Palm trees suggesting a tropical or subtropical climate.
+- **Text:** Partially visible text on a nearby shop.
+
+## Step 2: Refining the Search
+Using reverse image search engines, we focused on the bridge. The design closely matched the **Bandra-Worli Sea Link** in Mumbai, India. However, the angle was slightly different.
+
+Trying another reverse search on the street lamp led us to a few possible locations in Southeast Asia.
+
+Finally, checking the text "Cafe..." led us to search for cafes near famous bridges.
+
+## Step 3: Pinpointing the Location
+After narrowing it down via Google Maps and Street View, we found the exact spot. It was indeed a location in **Goa**, near the Mandovi River bridge (Atal Setu).
+
+Wait, upon closer inspection of the bridge's pylon structure in the high-res version, it was identified as the **Signature Bridge** in New Delhi.
+
+But the real answer was hidden in the EXIF data all along! just kidding. The EXIF was stripped.
+
+Re-evaluating the "Cafe..." sign, it read "Dilli Haat".
+
+**Location:** Near Signature Bridge, Wazirabad, data-center Delhi.
+
+## Final Coordinates
+We submitted the coordinates of the viewing deck.
+
+`28.7460° N, 77.2285° E`
+
+**Flag:** `HackHaul{Wazirabad_Signature_Bridge_View}`

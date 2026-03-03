@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -13,12 +13,18 @@
     "@tabler/icons-react": "^3.35.0",
     "@upstash/ratelimit": "^1.0.0",
     "@upstash/redis": "^1.30.0",
-    "next": "15.5.7",
-    "npm": "^11.6.3",
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.575.0",
+    "next": "^15.5.12",
+    "npm": "^11.6.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
+    "reading-time": "^1.5.0",
     "resend": "^6.1.0",
-    "sonner": "^2.0.7"
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
