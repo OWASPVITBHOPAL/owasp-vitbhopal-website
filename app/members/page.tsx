@@ -1,10 +1,10 @@
 "use client"
-import { Container } from '@/components/container'
-import MembersSection from '@/components/membersSection'
-import YearToggle from '@/components/yearToggle'
+import { Container } from '@/components/ui/container'
+import MembersSection from '@/components/sections/membersSection'
+import YearToggle from '@/components/ui/yearToggle'
 import { boardMembers, designTeam, technicalTeam, eventTeam, financeTeam, prTeam, contentTeam, alumni } from '@/Content/Members'
 import React, { useState, useMemo } from 'react'
-import Header from '@/components/header'
+import Header from '@/components/layout/header'
 
 interface Member {
   image: string;

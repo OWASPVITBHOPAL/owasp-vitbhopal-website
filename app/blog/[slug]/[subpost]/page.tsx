@@ -12,10 +12,10 @@ import {
 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-import PostNavigation from '@/components/RightSidebar';
-import PostSidebar from '@/components/LeftSidebar';
-import MDXComponents from '@/components/MDXComponents';
-import { Container } from '@/components/container';
+import PostNavigation from '@/components/layout/RightSidebar';
+import PostSidebar from '@/components/layout/LeftSidebar';
+import MDXComponents from '@/components/shared/MDXComponents';
+import { Container } from '@/components/ui/container';
 import {
   getAllBlogPosts,
   getBlogPost,

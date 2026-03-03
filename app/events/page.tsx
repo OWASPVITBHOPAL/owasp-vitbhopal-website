@@ -1,8 +1,8 @@
 import React from "react";
-import PastEvents from "@/components/pastEvents";
-import { Container } from "@/components/container";
+import PastEvents from "@/components/sections/pastEvents";
+import { Container } from "@/components/ui/container";
 import { pastEvents } from "@/Content/Events";
-import Header from '@/components/header'
+import Header from '@/components/layout/header'
 
 
 const page = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import { EventcardSVG } from "./svg";
-import { upCommingEvents } from "../Content/Events";
+import { EventcardSVG } from "../shared/svg";
+import { upCommingEvents } from "../../Content/Events";
 
 const eventCard = () => {
   return (

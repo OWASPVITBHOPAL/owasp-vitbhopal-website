@@ -1,9 +1,9 @@
 "use client";
-import { Container } from "@/components/container";
-import Header from "@/components/header";
+import { Container } from "@/components/ui/container";
+import Header from "@/components/layout/header";
 import React, { useMemo, useState } from "react";
 import { toast } from "sonner";
-import { CustomToaster } from "@/components/custom-toaster";
+import { CustomToaster } from "@/components/ui/custom-toaster";
 
 type FormState = {
   email: string;

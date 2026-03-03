@@ -1,5 +1,5 @@
 import React from 'react'
-import MemberCard from './memberCard'
+import MemberCard from '../cards/memberCard'
 
 interface Member {
     image: string;

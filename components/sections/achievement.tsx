@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { Container } from "./container";
-import { achivementsContent } from "../Content/Achievements";
+import { Container } from "../ui/container";
+import { achivementsContent } from "../../Content/Achievements";
 
 const Achievement = () => {
   return (

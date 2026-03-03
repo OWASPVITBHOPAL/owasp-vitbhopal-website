@@ -1,8 +1,8 @@
 "use client";
-import { Button } from "@/components/button";
-import { Container } from "@/components/container";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
 import React, { useState } from "react";
-import Header from '@/components/header'
+import Header from '@/components/layout/header'
 import { socialMediaLinks } from "@/Content/LayoutElements";
 import {
   IconBrandInstagramFilled,
@@ -12,7 +12,7 @@ import {
   IconBrandXFilled
 } from "@tabler/icons-react";
 import { toast } from "sonner";
-import { CustomToaster } from "@/components/custom-toaster";
+import { CustomToaster } from "@/components/ui/custom-toaster";
 
 
 

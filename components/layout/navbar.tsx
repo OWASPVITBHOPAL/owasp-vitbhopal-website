@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { navItems } from '@/Content/LayoutElements'
-import { Container } from './container'
-import { Button } from './button'
+import { Container } from '../ui/container'
+import { Button } from '../ui/button'
 import Link from 'next/link'
 
 const Navbar = () => {

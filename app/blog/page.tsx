@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { Clock } from 'lucide-react';
-import Header from '@/components/header';
+import Header from '@/components/layout/header';
 
 import { getAllBlogPosts } from '@/lib/blog';
-import { Container } from '@/components/container';
+import { Container } from '@/components/ui/container';
 
 export const metadata: Metadata = {
   title: 'Blog | OWASP VIT Bhopal',

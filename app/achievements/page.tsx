@@ -1,7 +1,7 @@
-import AchievementCard from "@/components/achievementCard";
+import AchievementCard from "@/components/cards/achievementCard";
 import { achivementsContent } from "@/Content/Achievements";
-import Header from "@/components/header";
-import { Container } from "@/components/container";
+import Header from "@/components/layout/header";
+import { Container } from "@/components/ui/container";
 
 export default function Achievements() {
   return (

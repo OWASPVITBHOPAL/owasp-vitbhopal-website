@@ -20,10 +20,10 @@ import {
   getNextPost,
   getSuggestedPosts,
 } from '@/lib/blog';
-import PostNavigation from '@/components/RightSidebar';
-import PostSidebar from '@/components/LeftSidebar';
-import MDXComponents from '@/components/MDXComponents';
-import { Container } from '@/components/container';
+import PostNavigation from '@/components/layout/RightSidebar';
+import PostSidebar from '@/components/layout/LeftSidebar';
+import MDXComponents from '@/components/shared/MDXComponents';
+import { Container } from '@/components/ui/container';
 
 interface BlogPageParams {
   slug: string;

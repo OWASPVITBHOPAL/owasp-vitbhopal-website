@@ -1,7 +1,7 @@
 "use client";
-import { Container } from "./container";
+import { Container } from "../ui/container";
 import React, { useState } from "react";
-import { pastEvents } from "../Content/Events";
+import { pastEvents } from "../../Content/Events";
 import Image from "next/image";
 
 interface AccordionProps {

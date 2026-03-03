@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { CalenderLogo, LocationLogo } from "./svg";
+import { CalenderLogo, LocationLogo } from "../shared/svg";
 
 interface PastEventsProps {
   imgUrl?: string;
