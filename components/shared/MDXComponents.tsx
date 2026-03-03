@@ -20,7 +20,7 @@ type ImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 const extractText = (children: React.ReactNode): string => {
   if (typeof children === 'string') return children;
   if (Array.isArray(children)) return children.map(extractText).join('');
-  if (React.isValidElement(children) && children.props) return extractText((children.props as any).children);
+  if (React.isValidElement(children) && children.props) return extractText((children.props as { children?: React.ReactNode }).children);
   return '';
 };
 
@@ -143,6 +143,7 @@ const components = {
     <td className="px-6 py-4 text-sm border-b border-white/5 last:border-0">{children}</td>
   ),
   img: ({ src, alt, ...rest }: ImageProps) => (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt}

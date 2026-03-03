@@ -1,5 +1,4 @@
 import { Container } from "../ui/container";
-import { HeroSVG } from "../shared/svg";
 
 const HeroSection = () => {
   return (

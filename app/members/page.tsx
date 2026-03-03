@@ -3,7 +3,7 @@ import { Container } from '@/components/ui/container'
 import MembersSection from '@/components/sections/membersSection'
 import YearToggle from '@/components/ui/yearToggle'
 import { boardMembers, designTeam, technicalTeam, eventTeam, financeTeam, prTeam, contentTeam, alumni } from '@/Content/Members'
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import Header from '@/components/layout/header'
 
 interface Member {
@@ -34,18 +34,18 @@ const Page = () => {
 
   const [selectedYear, setSelectedYear] = useState<number>(availableYears[0] || 2025);
 
-  const filterMembersByYear = (members: Member[]) => {
+  const filterMembersByYear = useCallback((members: Member[]) => {
     return members.filter(member => member.year === selectedYear);
-  };
+  }, [selectedYear]);
 
-  const filteredBoardMembers = useMemo(() => filterMembersByYear(boardMembers as Member[]), [selectedYear]);
-  const filteredTechnicalTeam = useMemo(() => filterMembersByYear(technicalTeam as Member[]), [selectedYear]);
-  const filteredDesignTeam = useMemo(() => filterMembersByYear(designTeam as Member[]), [selectedYear]);
-  const filteredContentTeam = useMemo(() => filterMembersByYear(contentTeam as Member[]), [selectedYear]);
-  const filteredEventTeam = useMemo(() => filterMembersByYear(eventTeam as Member[]), [selectedYear]);
-  const filteredFinanceTeam = useMemo(() => filterMembersByYear(financeTeam as Member[]), [selectedYear]);
-  const filteredPrTeam = useMemo(() => filterMembersByYear(prTeam as Member[]), [selectedYear]);
-  const filteredAlumni = useMemo(() => filterMembersByYear(alumni as Member[]), [selectedYear]);
+  const filteredBoardMembers = useMemo(() => filterMembersByYear(boardMembers as Member[]), [filterMembersByYear]);
+  const filteredTechnicalTeam = useMemo(() => filterMembersByYear(technicalTeam as Member[]), [filterMembersByYear]);
+  const filteredDesignTeam = useMemo(() => filterMembersByYear(designTeam as Member[]), [filterMembersByYear]);
+  const filteredContentTeam = useMemo(() => filterMembersByYear(contentTeam as Member[]), [filterMembersByYear]);
+  const filteredEventTeam = useMemo(() => filterMembersByYear(eventTeam as Member[]), [filterMembersByYear]);
+  const filteredFinanceTeam = useMemo(() => filterMembersByYear(financeTeam as Member[]), [filterMembersByYear]);
+  const filteredPrTeam = useMemo(() => filterMembersByYear(prTeam as Member[]), [filterMembersByYear]);
+  const filteredAlumni = useMemo(() => filterMembersByYear(alumni as Member[]), [filterMembersByYear]);
 
   return (
     <Container className='min-h-screen overflow-x-hidden px-4 md:px-6 lg:px-8'>
