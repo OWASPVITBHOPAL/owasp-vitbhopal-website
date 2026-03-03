@@ -32,7 +32,7 @@ export default async function BlogIndexPage() {
                 key={post.slug}
                 className="group flex flex-col h-full bg-white/[0.02] rounded-2xl overflow-hidden border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                {post.coverImage ? (
+                {post.coverImage && (
                   <Link
                     href={`/blog/${post.slug}`}
                     className="relative w-full h-56 block overflow-hidden"
@@ -45,8 +45,6 @@ export default async function BlogIndexPage() {
                     />
                     <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/10" />
                   </Link>
-                ) : (
-                  <div className="h-6 w-full bg-white/[0.02] border-b border-white/5" />
                 )}
 
                 <div className="flex flex-col flex-1 p-6 gap-4">
