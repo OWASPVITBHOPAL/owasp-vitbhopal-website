@@ -36,7 +36,7 @@ const socialMediaLinks = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/OWASP-CHAPTER-VIT-BHOPAL",
+    href: "https://github.com/owaspvitbhopal",
     icon: "IconBrandGithubFilled",
   },
   {
@@ -51,7 +51,7 @@ const socialMediaLinks = [
   },
   {
     name: "YouTube",
-    href: "https://www.youtube.com/c/owaspvitbhopal",
+    href: "https://www.youtube.com/@owaspvitbhopal",
     icon: "IconBrandYoutubeFilled",
   },
 ];
