@@ -1,10 +1,10 @@
-# OWASP VIT Bhopal University Student Chapter Website
+# OWASP VIT Bhopal Student Chapter Website
 
-Official website for the OWASP VIT Bhopal University Student Chapter.
+Official website for the OWASP VIT Bhopal Student Chapter.
 
 ## About
 
-The OWASP VIT Bhopal University Student Chapter is a student-led organization dedicated to promoting web application security awareness and education. Our mission is to empower students with the knowledge and skills needed to build secure applications and protect against cyber threats.
+The OWASP VIT Bhopal Student Chapter is a student-led organization dedicated to promoting web application security awareness and education. Our mission is to empower students with the knowledge and skills needed to build secure applications and protect against cyber threats.
 
 This chapter is part of the [OWASP Foundation](https://owasp.org/), a nonprofit foundation that works to improve the security of software through community-led open source software projects, worldwide chapters, and educational initiatives.
 

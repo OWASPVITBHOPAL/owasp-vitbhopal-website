@@ -15,7 +15,7 @@ const HeroSection = () => {
                 VIT Bhopal
               </div>
               <div className="text-[#ABABAB] text-[25px] sm:text-[12px] not-italic font-semibold tracking-wide leading-tight">
-                University Student Chapter
+                Student Chapter
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@ const HeroSection = () => {
             <div className="flex flex-row justify-end items-center w-full pr-8 md:pr-16">
               <div className="w-32 lg:w-40 border-[3px] lg:border-[4px] border-[#ABABAB] mr-4" />
               <span className="text-[#ABABAB] text-[20px] lg:text-[28px] xl:text-[32px] not-italic font-semibold leading-tight">
-                University Student Chapter
+                Student Chapter
               </span>
             </div>
           </div>

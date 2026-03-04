@@ -11,7 +11,7 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "OWASP VIT Bhopal University Student Chapter",
+  title: "OWASP VIT Bhopal Student Chapter",
   description: "Elite Club of Web Application Security at VIT Bhopal University",
 };
 
