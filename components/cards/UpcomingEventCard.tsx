@@ -22,20 +22,17 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
 }) => {
     return (
         <div className="group relative w-full mt-6 md:mt-8 rounded-2xl border border-[var(--border)] overflow-hidden transition-all duration-500 hover:border-white/25 hover:shadow-[0_0_30px_rgba(255,255,255,0.06)]">
-            {/* Gradient accent bar at top */}
-            <div className="h-[2px] w-full bg-gradient-to-r from-white/60 via-white/30 to-white/10" />
-
-            {/* Banner image — compact */}
+            {/* Banner image — full, no trim */}
             {imgUrl && (
-                <div className="relative w-full h-28 sm:h-32 overflow-hidden">
+                <div className="relative w-full overflow-hidden bg-[#111]">
                     <Image
                         src={imgUrl}
                         alt={title}
-                        fill
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        width={800}
+                        height={300}
+                        className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent opacity-70" />
                 </div>
             )}
 
