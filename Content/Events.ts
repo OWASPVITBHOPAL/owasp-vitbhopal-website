@@ -1,13 +1,15 @@
 const upCommingEvents = [
   {
-    title: "OWASP AppSec India 2024",
-    date: "2024-09-10",
+    title: "HackZero'26",
+    date: "28th - 29th March, 2026",
     description:
-      "Join us for the annual OWASP AppSec India conference, featuring top speakers and workshops on application security.",
-    link: "https://www.owasp.org/events/appsec-india-2024/",
-    imgUrl: "/testimg1.png",
-    time: "10:00 AM",
-    venue: "VIT Bhopal University",
+      "Stay tuned, details coming soon!",
+    link: "#",
+    imgUrl: "/events/hackzero26.png",
+    time: "TBA",
+    venue: "Online",
+    mode: "Online",
+    status: "Upcoming",
   },
 ];
 

@@ -1,8 +1,9 @@
 "use client";
 import { Container } from "../ui/container";
 import React, { useState } from "react";
-import { pastEvents } from "../../Content/Events";
+import { pastEvents, upCommingEvents } from "../../Content/Events";
 import Image from "next/image";
+import UpcomingEventCard from "../cards/UpcomingEventCard";
 
 interface AccordionProps {
   title: string;
@@ -66,91 +67,10 @@ const EventCollapsible: React.FC<AccordionProps> = ({
   );
 };
 
-// interface UpcomingEventProps {
-//   events: Array<{
-//     title: string;
-//     date: string;
-//     description: string;
-//     link?: string;
-//     imgUrl?: string;
-//     time?: string;
-//     venue?: string;
-//   }>;
-// }
-
-// const UpcomingEvent: React.FC<UpcomingEventProps> = ({ events }) => {
-//   return (
-//     <div className="w-full rounded-2xl border-2 border-[var(--border)] mt-8 ">
-//       <div className="w-full h-full flex flex-col p-6">
-//         <div className="flex justify-between items-center">
-//           <div className="text-3xl font-medium">Upcoming Event</div>
-//           <div>
-//             <a
-//               href="/events"
-//               className="text-md font-medium transition-transform duration-200 group"
-//             >
-//               <svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 height="24"
-//                 viewBox="0 0 24 24"
-//                 fill="none"
-//                 stroke="currentColor"
-//                 strokeWidth="2"
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right transition-transform duration-200 group-hover:rotate-0 rotate-45"
-//               >
-//                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-//                 <path d="M17 7l-10 10" />
-//                 <path d="M8 7l9 0l0 9" />
-//               </svg>
-//             </a>
-//           </div>
-//         </div>
-//         <div className="w-full h-[2px] bg-[var(--border)] my-4" />
-//         {events.map((event, idx) => (
-//           <div
-//             key={idx}
-//             className="flex flex-col md:flex-row gap-6 items-center mb-6"
-//           >
-//             {event.imgUrl ? (
-//               <Image
-//                 src={event.imgUrl}
-//                 width={200}
-//                 height={200}
-//                 alt={event.title}
-//                 className="w-full md:w-1/2 h-58 bg-white rounded-2xl aspect-square object-cover"
-//               />
-//             ) : (
-//               <div className="w-full md:w-1/2 h-58 bg-white rounded-2xl aspect-square" />
-//             )}
-//             <div className="flex flex-col gap-4">
-//               <div className="text-2xl font-semibold">{event.title}</div>
-//               <div className="text-sm font-normal text-[var(--muted-text)]">
-//                 {event.description}
-//               </div>
-//               <div>
-//                 <div className="text-sm font-medium text-[var(--muted-text)]">
-//                   Date: {event.date}
-//                 </div>
-//                 <div className="text-sm font-medium text-[var(--muted-text)]">
-//                   Time: {event.time}
-//                 </div>
-//                 <div className="text-sm font-medium text-[var(--muted-text)]">
-//                   Location: {event.venue}
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
 const EventSection = () => {
   const [openIndex, setOpenIndex] = useState<number>(1);
+  const upcomingEvent = upCommingEvents[0];
+
   return (
     <Container className="px-4 md:px-6 lg:px-8">
       <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-20 justify-between items-start mt-6 md:mt-10">
@@ -161,10 +81,21 @@ const EventSection = () => {
             Over the years, we&apos;ve transformed the face of cybersecurity, thereby
             achieving a variety of undisputed accomplishments.
           </div>
-          {/* <UpcomingEvent events={upCommingEvents} /> */}
+
+          {/* Upcoming Event Card */}
+          {upcomingEvent && (
+            <UpcomingEventCard
+              title={upcomingEvent.title}
+              date={upcomingEvent.date}
+              description={upcomingEvent.description}
+              imgUrl={upcomingEvent.imgUrl}
+              mode={upcomingEvent.mode}
+              status={upcomingEvent.status}
+            />
+          )}
         </div>
         <div className="flex flex-col justify-between w-full lg:w-1/2 h-full">
-          {pastEvents.slice(0,3).map((event, idx) => (
+          {pastEvents.slice(0, 3).map((event, idx) => (
             <EventCollapsible
               key={idx}
               title={event.title}
