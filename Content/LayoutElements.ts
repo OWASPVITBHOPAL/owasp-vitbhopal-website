@@ -31,7 +31,7 @@ const socialMediaLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/owasp-vit-bhopal-university/",
+    href: "https://www.linkedin.com/company/owaspvitbhopal/",
     icon: "IconBrandLinkedinFilled",
   },
   {
@@ -48,6 +48,11 @@ const socialMediaLinks = [
     name: "Twitter",
     href: "https://x.com/OwaspVitBhopal",
     icon: "IconBrandXFilled",
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/c/owaspvitbhopal",
+    icon: "IconBrandYoutubeFilled",
   },
 ];
 
