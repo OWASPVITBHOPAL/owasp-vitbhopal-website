@@ -31,6 +31,23 @@ const severityLevels = new Set(["Low", "Medium", "High", "Critical"]);
 const MAX_ATTACHMENTS = 3;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
+const ALLOWED_MIME_TYPES = new Set([
+  "application/pdf",
+  "image/png",
+  "image/jpeg",
+  "video/mp4",
+  "video/x-matroska",
+]);
+
+const ALLOWED_EXTENSIONS = new Set([
+  ".pdf",
+  ".png",
+  ".jpg",
+  ".jpeg",
+  ".mp4",
+  ".mkv",
+]);
+
 const escapeHtml = (value: string) =>
   value.replace(/[&<>'"]/g, (char) => {
     switch (char) {
@@ -112,6 +129,17 @@ export async function POST(req: NextRequest) {
           {
             success: false,
             error: "Each attachment must be 10 MB or smaller.",
+          },
+          { status: 400 }
+        );
+      }
+
+      const ext = "." + file.name.split(".").pop()?.toLowerCase();
+      if (!ALLOWED_MIME_TYPES.has(file.type) || !ALLOWED_EXTENSIONS.has(ext)) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: `File type not allowed: ${file.name}. Accepted formats: PDF, PNG, JPG, JPEG, MP4, MKV.`,
           },
           { status: 400 }
         );
@@ -210,16 +238,15 @@ export async function POST(req: NextRequest) {
                   <td style="font-weight:600; color:#111;">Steps:</td>
                   <td style="white-space:pre-line; color:#111;">${escapeHtml(steps)}</td>
                 </tr>
-                ${
-                  screenRecordingSafe
-                    ? `
+                ${screenRecordingSafe
+          ? `
                 <tr>
                   <td style="font-weight:600; color:#111;">Screen Recording:</td>
                   <td style="color:#111;"><a href="${screenRecordingSafe}" style="color:#0066cc;">${screenRecordingSafe}</a></td>
                 </tr>
                 `
-                    : ""
-                }
+          : ""
+        }
                 <tr>
                   <td style="font-weight:600; color:#111;">Attachments:</td>
                   <td style="color:#111;">${files.length ? `${files.length} file(s) attached` : "No attachments"}</td>
