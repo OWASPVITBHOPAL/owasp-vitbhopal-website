@@ -11,7 +11,6 @@ import {
   IconTarget,
   IconEye,
   IconHeart,
-  IconShieldCheck,
   IconWorld,
   IconBuildingCommunity,
 } from '@tabler/icons-react'
@@ -37,17 +36,17 @@ const pillars = [
   {
     icon: IconTarget,
     title: 'Mission',
-    body: 'Make security a core skill — not an elective. We run workshops, write research, and break things so our members graduate knowing what secure software actually looks like.',
+    body: 'Our members build CTF challenges, run conferences, host workshops and dig into real vulnerabilities.',
   },
   {
     icon: IconEye,
     title: 'Vision',
-    body: 'A campus where security gets taken seriously before production — not after an incident. Engineers who ship safe code by default.',
+    body: 'We want security to be design first approach for engineers during development, not something they try to fix after a breach.',
   },
   {
     icon: IconHeart,
     title: 'Values',
-    body: 'Openness over gatekeeping. Doing over discussing. If you\'re curious enough to ask how it breaks, you belong here.',
+    body: 'We don\'t care what year you\'re in or what branch you picked. Show up, ask questions, try things. That\'s the whole requirement.',
   },
 ]
 
@@ -112,12 +111,7 @@ export default function AboutPage() {
             variants={fadeUp}
             custom={0}
           >
-            <div className='flex items-center gap-3 mb-4'>
-              <IconShieldCheck className='w-6 h-6 text-white/50' />
-              <p className='text-xs uppercase tracking-widest text-white/30 font-medium'>
-                Official Student Chapter
-              </p>
-            </div>
+
             <p className='text-sm md:text-base text-[var(--muted-text)] leading-relaxed max-w-xl'>
               The <span className='text-white font-medium'>Open Worldwide Application Security Project (OWASP)</span> is
               a nonprofit foundation that works to improve the security of software globally.
@@ -244,7 +238,7 @@ export default function AboutPage() {
           Ready to join the mission?
         </h2>
         <p className='mx-auto max-w-2xl text-[var(--muted-text)] mb-8'>
-          No prerequisites. No gatekeeping. If you&apos;re curious about how systems break — and how to stop them — pull up a seat.
+          We don&apos;t need your resume. If you want to learn how things break and how to build them better, that&apos;s enough.
         </p>
         <a
           href='/contact'
