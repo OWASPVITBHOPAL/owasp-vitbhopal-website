@@ -1,8 +1,15 @@
 import React from "react";
+import { Metadata } from 'next';
 import { Container } from "@/components/ui/container";
 import Header from "@/components/layout/header";
 import { sponsors } from "@/Content/Sponsors";
 import SponsorCard from "@/components/cards/sponsorCard";
+
+export const metadata: Metadata = {
+  title: 'Sponsors',
+  description: 'Support OWASP VIT Bhopal — our sponsors help us run CTFs, workshops, and open-source security projects. Become a partner and invest in the next generation of cybersecurity engineers.',
+}
+
 
 export default function SponsorsPage() {
   const platinumSponsors = sponsors.filter((s) => s.tier === "Platinum");

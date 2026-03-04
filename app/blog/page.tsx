@@ -8,7 +8,8 @@ import { getAllBlogPosts } from '@/lib/blog';
 import { Container } from '@/components/ui/container';
 
 export const metadata: Metadata = {
-  title: 'Blog | OWASP VIT Bhopal',
+  title: 'Blog',
+  description: 'Read the latest insights, tutorials, write-ups, and updates from the OWASP VIT Bhopal cybersecurity community.',
 };
 
 export default async function BlogIndexPage() {
@@ -19,7 +20,7 @@ export default async function BlogIndexPage() {
       <Header title="Our Blog">
         Insights, tutorials, and updates from the OWASP VIT Bhopal community.
       </Header>
-      
+
       <div className='w-full border-2 my-4 border-dashed border-white/12' />
 
       <div className="w-full mx-auto space-y-8 mt-12">
@@ -62,8 +63,8 @@ export default async function BlogIndexPage() {
 
                   <div className="flex items-center gap-6 text-sm text-neutral-400">
                     <div className="flex items-center gap-2">
-                       <Clock className="w-4 h-4 text-neutral-500" />
-                       <span>{post.readTime}</span>
+                      <Clock className="w-4 h-4 text-neutral-500" />
+                      <span>{post.readTime}</span>
                     </div>
                     {post.author && (
                       <div className="flex items-center gap-1">
@@ -85,7 +86,7 @@ export default async function BlogIndexPage() {
                         key={tag}
                         className="px-3 py-1 text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
                       >
-                         #{tag}
+                        #{tag}
                       </span>
                     ))}
                   </div>

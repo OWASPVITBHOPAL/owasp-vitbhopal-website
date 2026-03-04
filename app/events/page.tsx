@@ -1,9 +1,14 @@
 import React from "react";
+import type { Metadata } from "next";
 import PastEvents from "@/components/sections/pastEvents";
 import { Container } from "@/components/ui/container";
 import { pastEvents } from "@/Content/Events";
 import Header from '@/components/layout/header'
 
+export const metadata: Metadata = {
+  title: 'Events',
+  description: 'Explore OWASP VIT Bhopal events — CTF competitions, workshops, bug-bounty sessions, and training programs designed to sharpen real-world cybersecurity skills.',
+}
 
 const page = () => {
   const sortedEvents = [...pastEvents].sort((a, b) => {
@@ -15,7 +20,7 @@ const page = () => {
   return (
     <Container>
       <Header title='Events'>
-Explore our workshops, CTF competitions, and training programs designed to build practical cybersecurity skills and foster a culture of security awareness.      </Header>
+        Explore our workshops, CTF competitions, and training programs designed to build practical cybersecurity skills and foster a culture of security awareness.      </Header>
 
 
       <h2 className='text-2xl sm:text-3xl md:text-4xl font-medium'>Past Events</h2>

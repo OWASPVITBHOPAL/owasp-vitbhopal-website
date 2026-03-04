@@ -22,7 +22,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' },
+    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' as const },
   }),
 }
 
@@ -247,7 +247,7 @@ export default function AboutPage() {
           No prerequisites. No gatekeeping. If you&apos;re curious about how systems break — and how to stop them — pull up a seat.
         </p>
         <a
-          href='#'
+          href='/contact'
           className='inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-medium text-black transition-transform hover:scale-105 hover:bg-gray-200'
         >
           Join Us

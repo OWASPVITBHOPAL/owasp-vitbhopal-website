@@ -10,9 +10,39 @@ const figtree = Figtree({
   weight: ["400", "500", "600", "700"],
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "OWASP VIT Bhopal Student Chapter",
+  url: "https://www.owaspvitb.in",
+  logo: "https://www.owaspvitb.in/logo.svg",
+  sameAs: [
+    "https://www.instagram.com/owaspvitbhopal/",
+    "https://www.linkedin.com/company/owaspvitbhopal/",
+    "https://github.com/owaspvitbhopal",
+    "https://x.com/OwaspVitBhopal",
+    "https://www.youtube.com/@owaspvitbhopal",
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "OWASP VIT Bhopal Student Chapter",
-  description: "Elite Club of Web Application Security at VIT Bhopal University",
+  metadataBase: new URL("https://www.owaspvitb.in"),
+  title: {
+    default: "OWASP VIT Bhopal — Student Chapter",
+    template: "%s — OWASP VIT Bhopal",
+  },
+  description:
+    "VIT Bhopal's premier cybersecurity community — CTFs, workshops, open-source security research, and more.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "OWASP VIT Bhopal",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OWASP VIT Bhopal Student Chapter" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@OwaspVitBhopal",
+  },
 };
 
 export default function RootLayout({
@@ -22,9 +52,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${figtree.variable} antialiased`}
-      >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={`${figtree.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />
@@ -32,3 +66,4 @@ export default function RootLayout({
     </html>
   );
 }
+
