@@ -9,7 +9,8 @@ import {
   IconBrandLinkedinFilled,
   IconBrandGithubFilled,
   IconBrandDiscordFilled,
-  IconBrandXFilled
+  IconBrandXFilled,
+  IconBrandYoutubeFilled
 } from "@tabler/icons-react";
 import { toast } from "sonner";
 import { CustomToaster } from "@/components/ui/custom-toaster";
@@ -94,17 +95,18 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   IconBrandGithubFilled,
   IconBrandDiscordFilled,
   IconBrandXFilled,
+  IconBrandYoutubeFilled,
 };
 
 const page = () => {
   return (
     <Container className="min-h-screen px-4 md:px-6 lg:px-8">
       <CustomToaster />
-      
-      <Header title='Contact Us'>
-Have questions or want to collaborate? We&apos;d love to hear from you. Reach out to the OWASP VIT Bhopal team and connect with our cybersecurity community.      </Header>
 
-    <h2 className='text-3xl md:text-4xl text-[#1b1a1d] font-medium'> .</h2>
+      <Header title='Contact Us'>
+        Have questions or want to collaborate? We&apos;d love to hear from you. Reach out to the OWASP VIT Bhopal team and connect with our cybersecurity community.      </Header>
+
+      <h2 className='text-3xl md:text-4xl text-[#1b1a1d] font-medium'> .</h2>
       <div className='w-full border-2 my-4 border-dashed border-white/12' />
 
       <div className="max-w-5xl mx-auto mt-8 md:mt-16">
