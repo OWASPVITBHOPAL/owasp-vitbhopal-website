@@ -3,8 +3,10 @@ import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 import { NextRequest } from 'next/server';
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend with a safe check for build time
+const resendApiKey = process.env.RESEND_API_KEY;
+// Only initialize if key is present to prevent build crashes
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Initialize rate limiter (3 requests per 10 minutes per IP)
 const ratelimit = new Ratelimit({
@@ -76,6 +78,11 @@ export async function POST(req: NextRequest) {
     }
     if (cleanMessage.length < 1 || cleanMessage.length > 2000) {
       return Response.json({ success: false, error: 'Message must be 1–2000 characters.' }, { status: 400 });
+    }
+
+    if (!resend) {
+      console.error('RESEND_API_KEY is not configured');
+      return Response.json({ success: false, error: 'System configuration error' }, { status: 500 });
     }
 
     const { error } = await resend.emails.send({

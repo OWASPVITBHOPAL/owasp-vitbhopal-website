@@ -29,10 +29,6 @@ interface BlogPageParams {
   slug: string;
 }
 
-interface BlogPageProps {
-  params: Promise<BlogPageParams>;
-}
-
 export async function generateMetadata({
   params,
 }: {

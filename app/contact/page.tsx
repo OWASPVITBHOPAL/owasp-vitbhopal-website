@@ -47,7 +47,7 @@ const ContactForm = () => {
       } else {
         toast.error(data.error || "Failed to send message.");
       }
-    } catch (_err) {
+    } catch {
       toast.error("Failed to send message.");
     } finally {
       setLoading(false);
