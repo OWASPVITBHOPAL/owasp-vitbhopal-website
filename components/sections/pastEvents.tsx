@@ -18,6 +18,10 @@ const PastEvents: React.FC<PastEventsProps> = ({ imgUrl, title, date, descriptio
     setImageSrc("/members/placeholder.png");
   };
 
+  const formatDate = (dateStr: string) => {
+    return dateStr.replace(/(\d{4})-(\d{2})-(\d{2})/g, '$3-$2-$1');
+  };
+
   return (
     <div className="flex flex-col max-w-6xl md:flex-row items-start h-auto md:h-60 w-full mx-auto gap-4 md:gap-6">
       {/* Image - only visible on desktop */}
@@ -56,7 +60,7 @@ const PastEvents: React.FC<PastEventsProps> = ({ imgUrl, title, date, descriptio
             </div>
             <div className="flex flex-row items-center w-fit text-xs sm:text-sm gap-2 bg-white/10 rounded-full px-3 py-1.5 h-fit">
               <CalenderLogo />
-              <span className="whitespace-nowrap">Date: {date}</span>
+              <span className="whitespace-nowrap">Date: {formatDate(date)}</span>
             </div>
           </div>
           <div className="mt-3 sm:mt-4 text-sm sm:text-base text-white/80">

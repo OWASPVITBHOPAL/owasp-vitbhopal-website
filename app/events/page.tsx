@@ -6,6 +6,12 @@ import Header from '@/components/layout/header'
 
 
 const page = () => {
+  const sortedEvents = [...pastEvents].sort((a, b) => {
+    const dateA = new Date(a.date.substring(0, 10));
+    const dateB = new Date(b.date.substring(0, 10));
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <Container>
       <Header title='Events'>
@@ -19,7 +25,7 @@ Explore our workshops, CTF competitions, and training programs designed to build
       {/* <EventCard /> */}
 
       <div className="mt-8 sm:mt-10 md:mt-12 flex flex-col gap-6 sm:gap-7 md:gap-8">
-        {pastEvents.map((event, idx) => (
+        {sortedEvents.map((event, idx) => (
           <PastEvents key={idx} {...event} />
         ))}
       </div>
