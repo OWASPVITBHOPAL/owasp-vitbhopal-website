@@ -37,17 +37,17 @@ const pillars = [
   {
     icon: IconTarget,
     title: 'Mission',
-    body: 'Empower every student with the skills and mindset to build secure software — from day one of their engineering journey.',
+    body: 'Make security a core skill — not an elective. We run workshops, write research, and break things so our members graduate knowing what secure software actually looks like.',
   },
   {
     icon: IconEye,
     title: 'Vision',
-    body: 'A campus where security is not an afterthought but a first principle — producing engineers the industry trusts.',
+    body: 'A campus where security gets taken seriously before production — not after an incident. Engineers who ship safe code by default.',
   },
   {
     icon: IconHeart,
     title: 'Values',
-    body: 'Open knowledge, radical collaboration, hands-on learning, and a relentless curiosity to break things responsibly.',
+    body: 'Openness over gatekeeping. Doing over discussing. If you\'re curious enough to ask how it breaks, you belong here.',
   },
 ]
 
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
       {/* ── Section 2: The OWASP Connection ── */}
       <div className='mt-20 md:mt-28'>
-        <SectionHeading>The OWASP Connection</SectionHeading>
+        <SectionHeading>What is OWASP</SectionHeading>
         <Separator />
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
@@ -244,9 +244,7 @@ export default function AboutPage() {
           Ready to join the mission?
         </h2>
         <p className='mx-auto max-w-2xl text-[var(--muted-text)] mb-8'>
-          Whether you&apos;re a seasoned CTF player or just getting started with
-          security — there&apos;s a place for you here. Join our community and start
-          building skills that matter.
+          No prerequisites. No gatekeeping. If you&apos;re curious about how systems break — and how to stop them — pull up a seat.
         </p>
         <a
           href='#'
