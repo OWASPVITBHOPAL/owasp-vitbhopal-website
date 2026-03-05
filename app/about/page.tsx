@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/container'
 import Header from '@/components/layout/header'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { aboutContent } from '@/Content/About'
 import {
   IconBook,
   IconTrophy,
@@ -25,54 +26,6 @@ const fadeUp = {
   }),
 }
 
-/* ─── data ─── */
-const owaspStats = [
-  { label: 'Founded', value: '2022', note: 'at VIT Bhopal University' },
-  { label: 'OWASP Chapters', value: '300+', note: 'across the globe' },
-  { label: 'OWASP Projects', value: '100+', note: 'open-source & community-led' },
-]
-
-const pillars = [
-  {
-    icon: IconTarget,
-    title: 'Mission',
-    body: 'Our members build CTF challenges, run conferences, host workshops and dig into real vulnerabilities.',
-  },
-  {
-    icon: IconEye,
-    title: 'Vision',
-    body: 'We want security to be design first approach for engineers during development, not something they try to fix after a breach.',
-  },
-  {
-    icon: IconHeart,
-    title: 'Values',
-    body: 'We don\'t care what year you\'re in or what branch you picked. Show up, ask questions, try things. That\'s the whole requirement.',
-  },
-]
-
-const activities = [
-  {
-    icon: IconBook,
-    category: 'Learning',
-    items: 'Researching cybersecurity domains, running workshops & hands-on training programmes for the campus.',
-  },
-  {
-    icon: IconTrophy,
-    category: 'Competing',
-    items: 'Participating & organising CTFs worldwide, bug-bounty hunting, and authoring CVEs.',
-  },
-  {
-    icon: IconCode,
-    category: 'Building',
-    items: 'Contributing to open-source security tools, designing & testing hardware security modules.',
-  },
-  {
-    icon: IconUsers,
-    category: 'Contributing',
-    items: 'Collaborating on international cybersecurity research projects and providing consultancy services.',
-  },
-]
-
 /* ─── section separator ─── */
 const Separator = () => (
   <div className='w-full border-2 my-6 md:my-8 border-dashed border-white/12' />
@@ -87,14 +40,14 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
    PAGE
    ═══════════════════════════════════════════ */
 export default function AboutPage() {
+  const { intro, stats, pillars, activities } = aboutContent
+
   return (
     <Container className='min-h-screen overflow-x-hidden px-4 md:px-6 lg:px-8 pb-20'>
 
       {/* ── Section 1: Hero Header ── */}
-      <Header title='About Us'>
-        Founded in 2022 at VIT Bhopal, we&apos;re a crew of security researchers,
-        CTF players, and open-source builders operating under the OWASP
-        Foundation &mdash; the world&apos;s most trusted name in application security.
+      <Header title={intro.title}>
+        {intro.description}
       </Header>
 
       {/* ── Section 2: The OWASP Connection ── */}
@@ -135,7 +88,7 @@ export default function AboutPage() {
 
           {/* right — stat cards */}
           <div className='flex flex-col gap-4'>
-            {owaspStats.map((stat, i) => (
+            {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 className='rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 md:p-6'

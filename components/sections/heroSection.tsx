@@ -1,6 +1,8 @@
 import { Container } from "../ui/container";
+import { homeContent } from "@/Content/Home";
 
 const HeroSection = () => {
+  const { titlePrefix, titleSuffix, subtitle } = homeContent.hero;
   return (
     <Container className="px-4 md:px-6 lg:px-8">
       <div className="relative w-full min-h-[250px] h-[80vh] md:h-[70vh] md:min-h-[500px] flex items-center justify-center my-0 md:my-16 overflow-hidden">
@@ -9,13 +11,13 @@ const HeroSection = () => {
           <div className="flex-shrink-0 flex flex-col select-none w-full items-center">
             <div className="flex flex-col items-center justify-center text-center mb-2">
               <div className="text-[#ABABAB] text-[100px] sm:text-[40px] not-italic font-bold leading-17 tracking-[-2px]">
-                OWASP
+                {titlePrefix}
               </div>
               <div className="text-[#ABABAB] text-[70px] sm:text-[40px] not-italic font-normal leading-tight">
-                VIT Bhopal
+                {titleSuffix}
               </div>
               <div className="text-[#ABABAB] text-[25px] sm:text-[12px] not-italic font-semibold tracking-wide leading-tight">
-                Student Chapter
+                {subtitle}
               </div>
             </div>
           </div>
@@ -26,16 +28,16 @@ const HeroSection = () => {
           <div className="flex-shrink-0 flex flex-col select-none w-full">
             <div className="flex flex-row justify-center items-center">
               <span className="text-[#ABABAB] text-[80px] md:text-[150px] not-italic font-bold leading-tight">
-                OWASP
+                {titlePrefix}
               </span>
               <span className="text-[#ABABAB] text-[80px] md:text-[140px]  not-italic font-normal leading-tight ml-8">
-                VIT Bhopal
+                {titleSuffix}
               </span>
             </div>
             <div className="flex flex-row justify-end items-center w-full pr-8 md:pr-16">
               <div className="w-32 lg:w-40 border-[3px] lg:border-[4px] border-[#ABABAB] mr-4" />
               <span className="text-[#ABABAB] text-[20px] lg:text-[28px] xl:text-[32px] not-italic font-semibold leading-tight">
-                Student Chapter
+                {subtitle}
               </span>
             </div>
           </div>

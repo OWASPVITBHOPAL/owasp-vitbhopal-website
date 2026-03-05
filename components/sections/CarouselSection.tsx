@@ -8,18 +8,10 @@ import {
 } from "motion/react";
 import { Container } from "../ui/container";
 import Image from "next/image";
+import { homeContent } from "@/Content/Home";
 
 // Duplicating images to ensure smooth looping
-const images = [
-  "/events/cyberconclave.JPG",
-  "/testimg1.png",
-  "/events/cyberconclave.JPG",
-  "/testimg1.png",
-  "/events/cyberconclave.JPG",
-  "/testimg1.png",
-  "/events/cyberconclave.JPG",
-  "/testimg1.png",
-];
+const images = homeContent.carouselImages;
 
 export default function CarouselSection() {
     const containerRef = useRef<HTMLDivElement>(null);
