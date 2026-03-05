@@ -9,9 +9,10 @@ interface PastEventsProps {
   date: string;
   description: string;
   venue?: string;
+  onClick?: () => void;
 }
 
-const PastEvents: React.FC<PastEventsProps> = ({ imgUrl, title, date, description, venue }) => {
+const PastEvents: React.FC<PastEventsProps> = ({ imgUrl, title, date, description, venue, onClick }) => {
   const [imageSrc, setImageSrc] = useState(imgUrl || "/members/placeholder.png");
 
   const handleImageError = () => {
@@ -23,7 +24,10 @@ const PastEvents: React.FC<PastEventsProps> = ({ imgUrl, title, date, descriptio
   };
 
   return (
-    <div className="flex flex-col max-w-6xl md:flex-row items-start h-auto md:h-60 w-full mx-auto gap-4 md:gap-6">
+    <div 
+      className="flex flex-col max-w-6xl md:flex-row items-start h-auto md:h-60 w-full mx-auto gap-4 md:gap-6 cursor-pointer group"
+      onClick={onClick}
+    >
       {/* Image - only visible on desktop */}
       <div className="hidden md:flex rounded-2xl w-[280px] lg:w-[320px] md:flex-shrink-0 h-full items-center justify-center overflow-hidden">
         {imgUrl ? (

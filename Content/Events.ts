@@ -21,6 +21,12 @@ const pastEvents = [
       "CyberConclave 2024 was VIT Bhopal's premier cybersecurity conference, featuring a full day of insightful talks and hands-on workshops from industry experts.",
     link: "https://www.instagram.com/cyberconclave.vitb?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     imgUrl: "/events/cyberconclave.JPG",
+    gallery: [
+      "/events/cyberconclave.JPG",
+      "/events/cyberconclave.JPG",
+      "/events/cyberconclave.JPG",
+      "/events/cyberconclave.JPG",
+    ],
     time: "10:00 AM - 4:00 PM",
   },
   {
@@ -30,6 +36,11 @@ const pastEvents = [
       "Our Shell n' Zen event engaged aspiring security enthusiasts with a packed workshop and a massive online CTF that challenged hundreds of participants to dominate the leaderboard.",
     link: "https://www.instagram.com/p/DGd3jopT3u_/",
     imgUrl: "/events/shell.JPG",
+    gallery: [
+      "/events/shell.JPG",
+      "/events/shell.JPG",
+      "/events/shell.JPG",
+    ],
     time: "11:00 AM - 1:30 PM",
   },
   {
@@ -39,6 +50,11 @@ const pastEvents = [
       "BUGTREK featured an exclusive session with renowned Bug Bounty Hunter, Ms. Aksha Chudasama, who shared her insights on security research before a thrilling CTF competition.",
     link: "https://www.instagram.com/p/DCi8Iw4vdNQ/",
     imgUrl: "/events/bugtrek.JPG",
+    gallery: [
+      "/events/bugtrek.JPG",
+      "/events/bugtrek.JPG",
+      "/events/bugtrek.JPG",
+    ],
     time: "11:00 AM - 4:00 PM",
   },
   {
@@ -48,6 +64,10 @@ const pastEvents = [
       "101 with Machine Learning & Revisiting Cyber Security” session presented by OWASP Bhopal Chapter & VIT-OWASP in Collaboration with TensorFlow Users Group Bhopal",
     link: "https://www.instagram.com/p/C6JGYRKvtKw/?img_index=1",
     imgUrl: "/events/101.JPG",
+    gallery: [
+      "/events/101.JPG",
+      "/events/101.JPG",
+    ],
     time: "11:00 AM - 4:30 PM",
   },
   {
