@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import React, { useState } from "react";

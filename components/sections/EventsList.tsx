@@ -4,8 +4,10 @@ import PastEvents from "@/components/sections/pastEvents";
 import { pastEvents } from "@/Content/Events";
 import EventModal from "@/components/ui/EventModal";
 
+type EventType = typeof pastEvents[number];
+
 const EventsList = () => {
-  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const sortedEvents = [...pastEvents].sort((a, b) => {
@@ -14,7 +16,7 @@ const EventsList = () => {
     return dateB.getTime() - dateA.getTime();
   });
 
-  const handleEventClick = (event: any) => {
+  const handleEventClick = (event: EventType) => {
     setSelectedEvent(event);
     setIsModalOpen(true);
   };

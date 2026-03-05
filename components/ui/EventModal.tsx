@@ -1,13 +1,26 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, MapPin, Clock } from "lucide-react";
 import Image from "next/image";
 
+interface IEvent {
+  title: string;
+  date: string;
+  description: string;
+  link?: string;
+  imgUrl?: string;
+  gallery?: string[];
+  time?: string;
+  venue?: string;
+  mode?: string;
+  status?: string;
+}
+
 interface EventModalProps {
   isOpen: boolean;
   onClose: () => void;
-  event: any; // Type this properly if possible, but 'any' allows flexibility with the gallery field additions
+  event: IEvent | null;
 }
 
 const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, event }) => {

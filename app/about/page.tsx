@@ -5,13 +5,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { aboutContent } from '@/Content/About'
 import {
-  IconBook,
-  IconTrophy,
-  IconCode,
-  IconUsers,
-  IconTarget,
-  IconEye,
-  IconHeart,
   IconWorld,
   IconBuildingCommunity,
 } from '@tabler/icons-react'
