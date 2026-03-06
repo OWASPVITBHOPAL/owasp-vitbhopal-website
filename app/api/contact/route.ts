@@ -1,19 +1,10 @@
 import { Resend } from 'resend';
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis';
 import { NextRequest } from 'next/server';
 
 // Initialize Resend with a safe check for build time
 const resendApiKey = process.env.RESEND_API_KEY;
 // Only initialize if key is present to prevent build crashes
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
-
-// Initialize rate limiter (3 requests per 10 minutes per IP)
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(3, '5 m'),
-  analytics: true,
-});
 
 function getIP(req: NextRequest): string {
   const vercelIP = req.headers.get('x-vercel-forwarded-for');
@@ -48,16 +39,6 @@ function isValidEmail(email: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
-  // 🔒 Rate limiting by IP
-  const ip = getIP(req);
-  const { success: isAllowed } = await ratelimit.limit(ip);
-  if (!isAllowed) {
-    return Response.json(
-      { success: false, error: 'Too many requests. Please try again later.' },
-      { status: 429 }
-    );
-  }
-
   try {
     const body = await req.json();
     const { name, email, message } = body;
