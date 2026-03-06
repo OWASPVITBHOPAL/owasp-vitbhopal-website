@@ -15,6 +15,20 @@ const upCommingEvents = [
 
 const pastEvents = [
   {
+    title: "Cyber Carnival 2026",
+    date: "2026-02-27",
+    description:
+      "Cyber Carnival 2026 was a landmark cybersecurity event jointly organized by 5 cybersecurity clubs, bringing together students and enthusiasts for an action-packed day. The highlight was an exciting offline CTF (Capture The Flag) competition that tested real-world hacking skills, alongside a series of interactive games and challenges designed to make security concepts fun and engaging.",
+    link: "https://www.instagram.com/owaspvitbhopal/",
+    imgUrl: "/events/cyberCarnival.jpeg",
+    gallery: [
+      "/events/cyberCarnival1.jpeg",
+      "/events/cyberCarnival2.jpeg",
+      "/events/cyberCarnival3.jpeg",
+    ],
+    time: "10:00 AM - 5:00 PM",
+  },
+  {
     title: "CyberConclave 2024",
     date: "2024-02-29 & 2024-03-01",
     description:
@@ -30,16 +44,16 @@ const pastEvents = [
     time: "10:00 AM - 4:00 PM",
   },
   {
-    title: "Shell n’ Zen 2024",
+    title: "Shell n’ Zen 2025",
     date: "2025-02-20",
     description:
       "Our Shell n' Zen event engaged aspiring security enthusiasts with a packed workshop and a massive online CTF that challenged hundreds of participants to dominate the leaderboard.",
     link: "https://www.instagram.com/p/DGd3jopT3u_/",
-    imgUrl: "/events/shell.JPG",
+    imgUrl: "/events/shellnzen1.jpeg",
     gallery: [
-      "/events/shell.JPG",
-      "/events/shell.JPG",
-      "/events/shell.JPG",
+      "/events/shellnzen1.jpeg",
+      "/events/shellnzen2.jpeg",
+      "/events/shellnzen3.jpeg",
     ],
     time: "11:00 AM - 1:30 PM",
   },
