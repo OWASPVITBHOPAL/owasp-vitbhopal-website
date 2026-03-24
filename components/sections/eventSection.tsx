@@ -73,10 +73,10 @@ const EventSection = () => {
 
   return (
     <Container className="px-4 md:px-6 lg:px-8">
-      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-20 justify-between items-start mt-6 md:mt-10">
+      <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-20 justify-between items-stretch mt-6 md:mt-10">
         <div className="flex flex-col gap-4 w-full lg:w-1/2 h-full">
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium">Our Events</div>
-          <div className="w-full h-[2px] bg-white/12" />
+          <div className="w-full h-0.5 bg-white/12" />
           <div className="text-sm md:text-base font-normal text-(--muted-text)">
             Over the years, we&apos;ve transformed the face of cybersecurity, thereby
             achieving a variety of undisputed accomplishments.

@@ -1,25 +1,29 @@
 import React from 'react'
+import Link from 'next/link'
 
 
 type ButtonProps = {
   children: React.ReactNode;
   href?: string;
   onClick?: () => void;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
 };
 
-export const Button = ({ children, href, onClick }: ButtonProps) => {
-  const className = 'flex h-10 w-auto px-7 justify-center items-center rounded-2xl bg-white font-bold text-[var(--text-colour)] text-sm ';
+export const Button = ({ children, href, onClick, className = '', type = 'button' }: ButtonProps) => {
+  const baseClassName = 'inline-flex h-10 w-auto px-7 justify-center items-center rounded-2xl bg-white font-bold text-[var(--text-colour)] text-sm transition-colors hover:bg-white/90';
+  const mergedClassName = `${baseClassName} ${className}`.trim();
   
   if (href) {
     return (
-      <a href={href} className={className} onClick={onClick}>
+      <Link href={href} className={mergedClassName} onClick={onClick}>
         {children}
-      </a>
+      </Link>
     );
   }
   
   return (
-    <button className={className} onClick={onClick}>
+    <button className={mergedClassName} onClick={onClick} type={type}>
       {children}
     </button>
   );

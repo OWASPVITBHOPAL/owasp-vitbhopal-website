@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { CalenderLogo } from "../shared/svg";
+import { Button } from "../ui/button";
 
 interface UpcomingEventCardProps {
     title: string;
@@ -29,7 +29,7 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
 }) => {
     if (layout === "detailed") {
         return (
-            <div className="group relative w-full mt-6 md:mt-8 rounded-2xl border border-(--border) bg-white/3 overflow-hidden transition-all duration-500 hover:border-white/25 hover:bg-white/5">
+            <div className="group relative w-full mt-6 md:mt-8 rounded-2xl border border-(--border) bg-white/3 overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
                     {imgUrl && (
                         <div className="relative w-full h-64 md:h-full min-h-64 overflow-hidden bg-[#111]">
@@ -37,7 +37,7 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
                                 src={imgUrl}
                                 alt={title}
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="object-cover object-center"
                                 sizes="(max-width: 768px) 100vw, 55vw"
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent md:bg-linear-to-r md:from-transparent md:to-black/30" />
@@ -75,18 +75,9 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
                         </p>
 
                         <div className="mt-auto flex items-center gap-2">
-                            {detailsHref ? (
-                                <Link
-                                    href={detailsHref}
-                                    className="inline-flex items-center rounded-full border border-white/20 bg-white px-4 py-2 text-xs font-semibold text-black transition hover:bg-white/90"
-                                >
-                                    {detailsLabel}
-                                </Link>
-                            ) : (
-                                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold tracking-wide text-white/85">
-                                    Stay Tuned
-                                </span>
-                            )}
+                            <Button href="/events/hackzero" className="h-9 rounded-full px-4 text-xs">
+                                Register
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +86,7 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
     }
 
     return (
-        <div className="group relative w-full mt-6 md:mt-8 rounded-2xl border border-(--border) overflow-hidden transition-all duration-500 hover:border-white/25 hover:shadow-[0_0_30px_rgba(255,255,255,0.06)]">
+        <div className=" relative w-full mt-6 md:mt-8 rounded-2xl border border-(--border) overflow-hidden transition-all duration-500 hover:border-white/25 hover:shadow-[0_0_30px_rgba(255,255,255,0.06)]">
             {/* Banner image — full, no trim */}
             {imgUrl && (
                 <div className="relative w-full overflow-hidden bg-[#111]">
@@ -104,7 +95,7 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
                         alt={title}
                         width={800}
                         height={300}
-                        className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-auto object-contain transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </div>
@@ -129,18 +120,9 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
                             Open
                         </span>
                     </div>
-                    {detailsHref ? (
-                        <Link
-                            href={detailsHref}
-                            className="px-3.5 py-1 rounded-lg border border-white/15 bg-white/5 text-xs font-semibold text-white/90 tracking-wide transition-all duration-300 hover:bg-white/10 hover:border-white/25"
-                        >
-                            {detailsLabel}
-                        </Link>
-                    ) : (
-                        <div className="px-3.5 py-1 rounded-lg border border-white/15 bg-white/5 text-xs font-semibold text-white/80 tracking-wide transition-all duration-300 hover:bg-white/10 hover:border-white/25 cursor-default select-none">
-                            Stay Tuned
-                        </div>
-                    )}
+                    <Button href="/events/hackzero" className="h-8 rounded-lg px-3.5 text-xs">
+                        Register
+                    </Button>
                 </div>
 
                 {/* Title + Date row */}

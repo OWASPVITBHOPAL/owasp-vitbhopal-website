@@ -28,7 +28,7 @@ const page = () => {
             title={upcomingEvent.title}
             date={upcomingEvent.date}
             description={upcomingEvent.description}
-            imgUrl={upcomingEvent.imgUrl}
+            imgUrl={upcomingEvent.headerSmallImg}
             mode={upcomingEvent.mode}
             status={upcomingEvent.status}
             layout="detailed"
