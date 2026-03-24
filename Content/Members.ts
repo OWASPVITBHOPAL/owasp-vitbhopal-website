@@ -43,6 +43,23 @@ const boardMembers = [
   },
 ];
 
+const facultyCoordinator = [
+  {
+    name: "Dr. D. Saravanan",
+    position: "Faculty Coordinator",
+    image: "/members/sarvana.png",
+    href: "https://vitbhopal.ac.in/",
+    year: 2026,
+  },
+  {
+    name: "Dr. G Prabu Kanna",
+    position: "Faculty Co Coordinator",
+    image: "/members/gprabhu.png",
+    href: "https://vitbhopal.ac.in/",
+    year: 2026,
+  }
+];
+
 const designTeam = [
   {
     name: "Saurabh Sharma",
@@ -294,6 +311,7 @@ const alumni = [
 ];
 
 export {
+  facultyCoordinator,
   boardMembers,
   designTeam,
   technicalTeam,

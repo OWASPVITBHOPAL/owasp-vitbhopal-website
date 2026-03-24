@@ -2,7 +2,7 @@
 import { Container } from '@/components/ui/container'
 import MembersSection from '@/components/sections/membersSection'
 import YearToggle from '@/components/ui/yearToggle'
-import { boardMembers, designTeam, technicalTeam, eventTeam, financeTeam, prTeam, contentTeam, alumni } from '@/Content/Members'
+import { facultyCoordinator, boardMembers, designTeam, technicalTeam, eventTeam, financeTeam, prTeam, contentTeam, alumni } from '@/Content/Members'
 import React, { useState, useMemo } from 'react'
 import Header from '@/components/layout/header'
 
@@ -25,6 +25,7 @@ const Page = () => {
   const filterCurrent = (members: Member[]) =>
     members.filter(m => m.year === CURRENT_YEAR);
 
+  const filteredFacultyCoordinator = useMemo(() => filterCurrent(facultyCoordinator as Member[]), []);
   const filteredBoardMembers = useMemo(() => filterCurrent(boardMembers as Member[]), []);
   const filteredTechnicalTeam = useMemo(() => filterCurrent(technicalTeam as Member[]), []);
   const filteredDesignTeam = useMemo(() => filterCurrent(designTeam as Member[]), []);
@@ -49,6 +50,7 @@ const Page = () => {
           alumni.length > 0 && <MembersSection title="Alumni" members={alumni as Member[]} />
         ) : (
           <>
+            {filteredFacultyCoordinator.length > 0 && <MembersSection title="Faculty Coordinator" members={filteredFacultyCoordinator} />}
             {filteredBoardMembers.length > 0 && <MembersSection title="Board Members" members={filteredBoardMembers} />}
             {filteredTechnicalTeam.length > 0 && <MembersSection title="Technical Team" members={filteredTechnicalTeam} />}
             {filteredDesignTeam.length > 0 && <MembersSection title="Design Team" members={filteredDesignTeam} />}
