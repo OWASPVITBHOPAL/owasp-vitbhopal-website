@@ -308,6 +308,18 @@ const alumni = [
     href: "https://www.linkedin.com/in/saurabh-jain-224/",
     year: 2024,
   },
+  {
+    name: "Jane Doe",
+    image: "/members/jane_doe.png",
+    href: "https://www.linkedin.com/in/jane-doe",
+    year: 2023,
+  },
+  {
+    name: "John Smith",
+    image: "/members/john_smith.png",
+    href: "https://www.linkedin.com/in/john-smith",
+    year: 2022,
+  },
 ];
 
 export {

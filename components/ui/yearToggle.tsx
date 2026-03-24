@@ -8,7 +8,7 @@ interface YearToggleProps {
 
 const tabs: { label: string; key: string; disabled: boolean }[] = [
     { label: '2026', key: '2026', disabled: false },
-    { label: 'Alumni', key: 'alumni', disabled: true },
+    { label: 'Alumni', key: 'alumni', disabled: false },
 ];
 
 const YearToggle: React.FC<YearToggleProps> = ({ selectedTab, onTabChange }) => {
