@@ -33,7 +33,7 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
    PAGE
    ═══════════════════════════════════════════ */
 export default function AboutPage() {
-  const { intro, stats, pillars, activities } = aboutContent
+  const { intro, stats, pillars, activities, owaspSection, standForTitle, whatWeDoTitle, joinCta } = aboutContent
 
   return (
     <Container className='min-h-screen overflow-x-hidden px-4 md:px-6 lg:px-8 pb-20'>
@@ -45,7 +45,7 @@ export default function AboutPage() {
 
       {/* ── Section 2: The OWASP Connection ── */}
       <div className='mt-20 md:mt-28'>
-        <SectionHeading>What is OWASP</SectionHeading>
+        <SectionHeading>{owaspSection.title}</SectionHeading>
         <Separator />
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
@@ -59,22 +59,17 @@ export default function AboutPage() {
           >
 
             <p className='text-sm md:text-base text-[var(--muted-text)] leading-relaxed max-w-xl'>
-              The <span className='text-white font-medium'>Open Worldwide Application Security Project (OWASP)</span> is
-              a nonprofit foundation that works to improve the security of software globally.
-              As an official student chapter, we operate under their charter — aligning our
-              workshops, research, and events with the foundation&apos;s mission to make
-              security visible so that organisations and individuals can make informed
-              decisions about true software risk.
+              {owaspSection.description}
             </p>
             <div className='flex items-center gap-2 mt-6'>
               <IconWorld className='w-4 h-4 text-white/40' />
               <a
-                href='https://owasp.org'
+                href={owaspSection.linkHref}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-4'
               >
-                owasp.org
+                {owaspSection.linkText}
               </a>
             </div>
           </motion.div>
@@ -106,7 +101,7 @@ export default function AboutPage() {
 
       {/* ── Section 3: Mission / Vision / Values ── */}
       <div className='mt-20 md:mt-28'>
-        <SectionHeading>What We Stand For</SectionHeading>
+        <SectionHeading>{standForTitle}</SectionHeading>
         <Separator />
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
@@ -137,7 +132,7 @@ export default function AboutPage() {
 
       {/* ── Section 4: What We Do ── */}
       <div className='mt-20 md:mt-28'>
-        <SectionHeading>What We Do</SectionHeading>
+        <SectionHeading>{whatWeDoTitle}</SectionHeading>
         <Separator />
 
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
@@ -181,16 +176,16 @@ export default function AboutPage() {
       >
         <IconBuildingCommunity className='w-10 h-10 mx-auto mb-4 text-white/40' />
         <h2 className='mb-4 text-2xl font-bold md:text-3xl'>
-          Ready to join the mission?
+          {joinCta.title}
         </h2>
         <p className='mx-auto max-w-2xl text-[var(--muted-text)] mb-8'>
-          We don&apos;t need your resume. If you want to learn how things break and how to build them better, that&apos;s enough.
+          {joinCta.description}
         </p>
         <a
-          href='/contact'
+          href={joinCta.buttonHref}
           className='inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-medium text-black transition-transform hover:scale-105 hover:bg-gray-200'
         >
-          Join Us
+          {joinCta.buttonText}
         </a>
       </motion.div>
 

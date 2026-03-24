@@ -56,5 +56,19 @@ export const aboutContent = {
             category: 'Contributing',
             items: 'Collaborating on international cybersecurity research projects and providing consultancy services.',
         },
-    ]
+    ],
+    owaspSection: {
+        title: 'What is OWASP',
+        description: 'The Open Worldwide Application Security Project (OWASP) is a nonprofit foundation that works to improve the security of software globally. As an official student chapter, we operate under their charter - aligning our workshops, research, and events with the foundation\'s mission to make security visible so that organisations and individuals can make informed decisions about true software risk.',
+        linkText: 'owasp.org',
+        linkHref: 'https://owasp.org',
+    },
+    standForTitle: 'What We Stand For',
+    whatWeDoTitle: 'What We Do',
+    joinCta: {
+        title: 'Ready to join the mission?',
+        description: 'We don\'t need your resume. If you want to learn how things break and how to build them better, that\'s enough.',
+        buttonText: 'Join Us',
+        buttonHref: '/contact',
+    },
 }
