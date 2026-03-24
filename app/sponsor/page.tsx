@@ -63,7 +63,7 @@ export default function SponsorsPage() {
             <div className="flex flex-col items-start gap-3">
               <p className="text-xs uppercase tracking-widest text-white/30 font-medium">Status</p>
               <h2 className="text-4xl md:text-5xl font-medium text-white/90">Coming Soon.</h2>
-              <p className="text-sm md:text-base text-[var(--muted-text)] max-w-lg mt-2">
+              <p className="text-sm md:text-base text-(--muted-text) max-w-lg mt-2">
                 Our sponsors list is being updated. Partnerships and sponsorships
                 for the current cycle will be announced here shortly.
               </p>
@@ -74,7 +74,7 @@ export default function SponsorsPage() {
 
       <div className="mt-20 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm md:p-12">
         <h2 className="mb-4 text-2xl font-bold md:text-3xl">Become a Sponsor</h2>
-        <p className="mx-auto max-w-2xl text-[var(--muted-text)] mb-8">
+        <p className="mx-auto max-w-2xl text-(--muted-text) mb-8">
           Partner with OWASP VIT Bhopal to reach passionate cybersecurity enthusiasts
           and future industry leaders.
         </p>

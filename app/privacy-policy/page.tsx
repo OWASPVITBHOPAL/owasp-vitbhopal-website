@@ -17,7 +17,7 @@ const page = () => {
                         <div className="border-b border-dashed border-white/12 mb-4" />
                         <ul className="space-y-2">
                             {section.content.map((line, i) => (
-                                <li key={i} className="text-sm md:text-base text-[var(--muted-text)] leading-relaxed flex gap-2">
+                                <li key={i} className="text-sm md:text-base text-(--muted-text) leading-relaxed flex gap-2">
                                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/30 flex-shrink-0" />
                                     {line}
                                 </li>
@@ -26,7 +26,7 @@ const page = () => {
                     </div>
                 ))}
 
-                <div className="border-t border-dashed border-white/12 pt-6 text-sm text-[var(--muted-text)]">
+                <div className="border-t border-dashed border-white/12 pt-6 text-sm text-(--muted-text)">
                     <p>
                         For any privacy-related concerns, contact us at{' '}
                         <a

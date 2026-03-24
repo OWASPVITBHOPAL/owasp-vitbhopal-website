@@ -29,7 +29,7 @@ const EventCollapsible: React.FC<AccordionProps> = ({
   };
   return (
     <div
-      className="w-full rounded-2xl border-2 border-[var(--border)] p-4 md:p-6 mt-6 md:mt-8 transition-all duration-300 ease-in-out hover:border-white/20"
+      className="w-full rounded-2xl border-2 border-(--border) p-4 md:p-6 mt-6 md:mt-8 transition-all duration-300 ease-in-out hover:border-white/20"
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
@@ -56,7 +56,7 @@ const EventCollapsible: React.FC<AccordionProps> = ({
                   onError={handleImageError}
                 />
               )}
-              <p className="text-[var(--muted-text)] text-sm md:text-base leading-relaxed">
+              <p className="text-(--muted-text) text-sm md:text-base leading-relaxed">
                 {description}
               </p>
             </div>
@@ -77,7 +77,7 @@ const EventSection = () => {
         <div className="flex flex-col gap-4 w-full lg:w-1/2 h-full">
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium">Our Events</div>
           <div className="w-full h-[2px] bg-white/12" />
-          <div className="text-sm md:text-base font-normal text-[var(--muted-text)]">
+          <div className="text-sm md:text-base font-normal text-(--muted-text)">
             Over the years, we&apos;ve transformed the face of cybersecurity, thereby
             achieving a variety of undisputed accomplishments.
           </div>

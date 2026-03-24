@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/layout/footer";
+import { LayoutWrapper } from "@/components/layout/layout-wrapper";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -37,7 +36,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "OWASP VIT Bhopal",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OWASP VIT Bhopal Student Chapter" }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "OWASP VIT Bhopal Student Chapter",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -58,12 +64,17 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${figtree.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body
+        className={`${figtree.variable} antialiased`}
+        style={{
+          backgroundImage:
+            "repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 14px)",
+        }}
+      >
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
       </body>
     </html>
   );
 }
-

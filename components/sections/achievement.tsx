@@ -7,11 +7,11 @@ const Achievement = () => {
   return (
     <Container className="px-4 md:px-6 lg:px-8">
       <div className="flex flex-col gap-4 mt-6 md:mt-10">
-        <h1 className="text-white font-figtree text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-tight lg:leading-[81px] not-italic">
+        <h1 className="text-white font-figtree text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-medium leading-tight lg:leading-20.25 not-italic">
           Our Achievements
         </h1>
         <div className="w-full h-[2px] bg-white/12" ></div>
-        <div className="text-sm md:text-base font-normal text-[var(--muted-text)]">
+        <div className="text-sm md:text-base font-normal text-(--muted-text)">
           Over the years we&apos;ve transformed the face of cybersecurity, therby
           therefore realise regardless thereafter unrestored underestimated
           variety of various undisputed achievments

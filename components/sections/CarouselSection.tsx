@@ -68,7 +68,7 @@ export default function CarouselSection() {
                         Gallery
                     </h1>
                     <div className="w-full h-[2px] bg-white/12" />
-                    <div className="text-sm md:text-base font-normal text-[var(--muted-text)]">
+                    <div className="text-sm md:text-base font-normal text-(--muted-text)">
                         Explore moments from our past events, workshops, and community gatherings.
                     </div>
                 </div>

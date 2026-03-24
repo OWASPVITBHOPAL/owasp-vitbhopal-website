@@ -30,9 +30,9 @@ const SponsorCard: React.FC<SponsorCardProps> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("group w-full max-w-[300px]", className)}
+      className={cn("group w-full max-w-75", className)}
     >
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl border-2 border-[var(--border)] bg-zinc-900/40 p-6 transition-all duration-300 hover:border-white/20 hover:bg-zinc-800/60">
+      <div className="relative aspect-video w-full overflow-hidden rounded-xl border-2 border-(--border) bg-zinc-900/40 p-6 transition-all duration-300 hover:border-white/20 hover:bg-zinc-800/60">
         <div className="flex h-full w-full items-center justify-center">
           <div className="relative h-full w-full">
             <Image

@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({title, children}) => {
           <div className='w-fit'>
             <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium'>{title}</h1>
           </div>
-          <div className='text-left mt-4 text-[var(--muted-text)] max-w-lg'>
+          <div className='text-left mt-4 text-(--muted-text) max-w-lg'>
             <div className='w-full border-2 my-4 border-dashed border-white/12' />
             <div className='text-sm md:text-base'>{children}</div>
           </div>

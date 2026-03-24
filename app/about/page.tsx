@@ -58,7 +58,7 @@ export default function AboutPage() {
             custom={0}
           >
 
-            <p className='text-sm md:text-base text-[var(--muted-text)] leading-relaxed max-w-xl'>
+            <p className='text-sm md:text-base text-(--muted-text) leading-relaxed max-w-xl'>
               {owaspSection.description}
             </p>
             <div className='flex items-center gap-2 mt-6'>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <p className='text-3xl md:text-4xl font-bold mt-1 text-white/90'>
                   {stat.value}
                 </p>
-                <p className='text-sm text-[var(--muted-text)] mt-1'>{stat.note}</p>
+                <p className='text-sm text-(--muted-text) mt-1'>{stat.note}</p>
               </motion.div>
             ))}
           </div>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 <p className='text-xs uppercase tracking-widest text-white/30 font-medium'>
                   {pillar.title}
                 </p>
-                <p className='text-sm md:text-base text-[var(--muted-text)] leading-relaxed'>
+                <p className='text-sm md:text-base text-(--muted-text) leading-relaxed'>
                   {pillar.body}
                 </p>
               </motion.div>
@@ -156,7 +156,7 @@ export default function AboutPage() {
                     {activity.category}
                   </h3>
                 </div>
-                <p className='text-sm md:text-base text-[var(--muted-text)] leading-relaxed'>
+                <p className='text-sm md:text-base text-(--muted-text) leading-relaxed'>
                   {activity.items}
                 </p>
               </motion.div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
         <h2 className='mb-4 text-2xl font-bold md:text-3xl'>
           {joinCta.title}
         </h2>
-        <p className='mx-auto max-w-2xl text-[var(--muted-text)] mb-8'>
+        <p className='mx-auto max-w-2xl text-(--muted-text) mb-8'>
           {joinCta.description}
         </p>
         <a
