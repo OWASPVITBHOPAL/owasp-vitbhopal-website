@@ -54,7 +54,7 @@ const facultyCoordinator = [
   {
     name: "Dr. D. Saravanan",
     position: "Faculty Coordinator",
-    image: "/members/sarvanan.png",
+    image: "/members/sarvanan.jpg",
     href: "https://vitbhopal.ac.in/",
     year: 2026,
   },
