@@ -43,7 +43,7 @@ const boardMembers = [
   },
   {
     name: "Ankit Singh",
-    position:"Student Coordinator"
+    position:"Student Coordinator",
     image: "/members/ankit.png",
     href: "https://www.linkedin.com/in/ankit-s01/",
     year: 2026,
