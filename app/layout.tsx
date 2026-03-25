@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 import { LayoutWrapper } from "@/components/layout/layout-wrapper";
+import Loader from "@/components/Loader";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -71,9 +72,11 @@ export default function RootLayout({
             "repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 14px)",
         }}
       >
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+        <Loader>
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
+        </Loader>
       </body>
     </html>
   );
