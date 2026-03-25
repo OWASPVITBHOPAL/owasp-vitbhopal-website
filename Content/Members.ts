@@ -1,44 +1,51 @@
 const boardMembers = [
   {
-    name: "Ayush Juneja",
-    position: "Chapter Leader",
-    image: "/members/ayush.png",
-    href: "https://www.linkedin.com/in/ayushjuneja18",
-    year: 2026,
-  },
-  {
     name: "Sanidhya Soni",
-    position: "President",
+    position: "Chapter Leader",
     image: "/members/sanidhya.png",
     href: "mailto:sanidhya.soni@owasp.org",
     year: 2026,
   },
   {
     name: "Amar Saroha",
-    position: "Vice President",
+    position: "Co-Chapter Leader",
     image: "/members/amar.png",
     href: "https://www.linkedin.com/in/amar-saroha/",
     year: 2026,
   },
   {
-    name: "Aashish Raj",
-    position: "Chief of Staff",
-    image: "/members/aashish.png",
-    href: "https://aashish.live/",
-    year: 2026,
-  },
-  {
-    name: "Shlok",
-    position: "Secretary",
-    image: "/members/shlok.png",
-    href: "mailto:shlok.23bce11457@vitbhopal.ac.in",
-    year: 2026,
-  },
-  {
-    name: "Somnath",
-    position: "Secretary",
+    name: "Somnath Das",
+    position: "President",
     image: "/members/somnath.png",
     href: "https://www.linkedin.com/in/das-somnath?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    year: 2026,
+  },
+  {
+    name: "Ishaani Prashant",
+    position: "Vice President",
+    image: "/members/ishani.png",
+    href: "https://www.linkedin.com/in/ishaani-prashant",
+    year: 2026,
+  },
+  {
+    name: "Saurabh Sharma",
+    position: "Secretary",
+    image: "/members/saurabh.png",
+    href: "https://www.headbanger.me/",
+    year: 2026,
+  },
+  {
+    name: "Siya Sanjit Sawant Dessai",
+    position: "Secretary",
+    image: "/members/siya.png",
+    href: "https://www.linkedin.com/in/siya-dessai-89b616325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    year: 2026,
+  },
+  {
+    name: "Ankit Singh",
+    position:"Student Coordinator"
+    image: "/members/ankit.png",
+    href: "https://www.linkedin.com/in/ankit-s01/",
     year: 2026,
   },
 ];
@@ -143,9 +150,9 @@ const technicalTeam = [
     year: 2026,
   },
   {
-    name: "Ankit Singh",
-    image: "/members/ankit.png",
-    href: "https://www.linkedin.com/in/ankit-s01/",
+    name: "Shlok Kumar",
+    image: "/members/somnath.png",
+    href: "https://www.linkedin.com/in/ehsks/",
     year: 2026,
   },
   {
@@ -163,12 +170,6 @@ const technicalTeam = [
 ];
 
 const eventTeam = [
-  {
-    name: "Bidhi Sarma",
-    image: "/members/bidhi.png",
-    href: "https://www.instagram.com/bidhi_sarma?igsh=OGo2cWZ4MDRhcmpw",
-    year: 2026,
-  },
   {
     name: "Shreya Tiwari",
     image: "/members/shreya.png",
@@ -303,22 +304,18 @@ const contentTeam = [
 
 const alumni = [
   {
-    name: "Saurabh Jain",
-    image: "/members/saurabh_alumni.png",
-    href: "https://www.linkedin.com/in/saurabh-jain-224/",
-    year: 2024,
+    name: "Ayush Juneja",
+    position: "Ex Chapter Leader",
+    image: "/members/ayush.png",
+    href: "https://www.linkedin.com/in/ayushjuneja18",
+    year: 2025,
   },
   {
-    name: "Jane Doe",
-    image: "/members/jane_doe.png",
-    href: "https://www.linkedin.com/in/jane-doe",
-    year: 2023,
-  },
-  {
-    name: "John Smith",
-    image: "/members/john_smith.png",
-    href: "https://www.linkedin.com/in/john-smith",
-    year: 2022,
+    name: "Aashish Raj",
+    position: "Chief of Staff",
+    image: "/members/aashish.png",
+    href: "https://aashish.live/",
+    year: 2025,
   },
 ];
 
