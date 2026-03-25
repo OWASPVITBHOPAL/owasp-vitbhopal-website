@@ -8,7 +8,7 @@ const boardMembers = [
   },
   {
     name: "Amar Saroha",
-    position: "Co-Chapter Leader",
+    position: "Chapter Co-Leader",
     image: "/members/amar.png",
     href: "https://www.linkedin.com/in/amar-saroha/",
     year: 2026,
