@@ -22,16 +22,16 @@ const MembersSection: React.FC<MembersSectionProps> = ({ title, members }) => {
             
             <div className="w-full overflow-hidden">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 gap-y-5 mt-8 justify-items-center mx-auto max-w-full">
-                    {members.map((member, index) => (
-                        <MemberCard
-                            key={index}
-                            image={member.image}
-                            name={member.name}
-                            position={member.position}
-                            alt={member.alt}
-                            href={member.href}
-                        />
-                    ))}
+                    {members.map((member) => (
+    <MemberCard
+        key={`${member.name}-${member.image}`}
+        image={member.image}
+        name={member.name}
+        position={member.position}
+        alt={member.alt}
+        href={member.href}
+    />
+))}
                 </div>
             </div>
         </div>
