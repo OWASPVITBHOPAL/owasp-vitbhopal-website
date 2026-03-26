@@ -20,6 +20,7 @@
     "motion": "^12.34.5",
     "next": "^15.5.12",
     "npm": "^11.6.0",
+    "posthog-js": "^1.363.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-markdown": "^10.1.0",

@@ -3,6 +3,9 @@ import { Figtree } from "next/font/google";
 import "./globals.css";
 import { LayoutWrapper } from "@/components/layout/layout-wrapper";
 import Loader from "@/components/Loader";
+import { PostHogProvider } from "@/components/PostHogProvider";
+import { PostHogPageView } from "@/components/PostHogPageView";
+import { Suspense } from "react";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -72,11 +75,16 @@ export default function RootLayout({
             "repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 14px)",
         }}
       >
-        <Loader>
-          <LayoutWrapper>
-            {children}
-          </LayoutWrapper>
-        </Loader>
+        <PostHogProvider>
+          <Suspense fallback={null}>
+            <PostHogPageView />
+          </Suspense>
+          <Loader>
+            <LayoutWrapper>
+              {children}
+            </LayoutWrapper>
+          </Loader>
+        </PostHogProvider>
       </body>
     </html>
   );
