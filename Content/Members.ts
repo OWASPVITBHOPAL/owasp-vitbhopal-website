@@ -305,14 +305,14 @@ const contentTeam = [
 const alumni = [
   {
     name: "Ayush Juneja",
-    position: "Ex Chapter Leader",
+    position: "Security Analyst @CloudSEK",
     image: "/members/ayush.png",
     href: "https://www.linkedin.com/in/ayushjuneja18",
     year: 2025,
   },
   {
     name: "Aashish Raj",
-    position: "Chief of Staff",
+    position: "SDE @Upswing",
     image: "/members/aashish.png",
     href: "https://aashish.live/",
     year: 2025,
