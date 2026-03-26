@@ -13,6 +13,7 @@
     "@tabler/icons-react": "^3.35.0",
     "@upstash/ratelimit": "^1.0.0",
     "@upstash/redis": "^1.30.0",
+    "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.5",
     "gray-matter": "^4.0.3",

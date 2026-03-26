@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 import { LayoutWrapper } from "@/components/layout/layout-wrapper";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Loader from "@/components/Loader";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { PostHogPageView } from "@/components/PostHogPageView";
@@ -81,6 +82,7 @@ export default function RootLayout({
           </Suspense>
           <Loader>
             <LayoutWrapper>
+            <SpeedInsights/>
               {children}
             </LayoutWrapper>
           </Loader>
