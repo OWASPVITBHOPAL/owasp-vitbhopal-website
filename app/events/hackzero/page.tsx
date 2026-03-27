@@ -284,22 +284,24 @@ export default function EventDetailsPage() {
                         Address by Faculty Coordinator
                       </div>
                     </div>
-                    <div className="rounded-xl bg-[#85011b] p-3 flex flex-col gap-2">
-                      <div className="rounded-xl bg-[#85011b] p-3 flex justify-between">
+                    <div className="rounded-xl bg-[#85011b] p-4 flex flex-col gap-4">
+                      <div className="flex items-start justify-between gap-4">
                         <div className="text-base font-bold text-white/90">
-                          13:30 – 13:45
+                          14:00 - 15:00
                         </div>
                         <div className="text-white/80 text-sm">
-                          Introduction to the event
+                          Expert session
                         </div>
                       </div>
-                      <div className="flex gap-2">
-                        <img
-                          src="/events/HackZero/speakers/sourajeet.png"
-                          alt="Sourajeet Majumder"
-                          className="w-auto h-full object-cover border border-white"
-                        />
-                        <div className="flex-1">
+                      <div className="grid grid-cols-[96px_minmax(0,1fr)] items-start gap-4 sm:grid-cols-[110px_minmax(0,1fr)]">
+                        <div className="overflow-hidden rounded-lg border border-white/40 max-h-[112px]">
+                          <img
+                            src="/events/HackZero/speakers/sourajeet.png"
+                            alt="Sourajeet Majumder"
+                            className="block h-full w-full object-cover"
+                          />
+                        </div>
+                        <div className="flex min-w-0 flex-col justify-start">
                           <div className="text-white/90 text-sm font-semibold mt-0.5">
                             Session by Sourajeet Majumder{" "}
                             <span className="text-white/60 text-xs">
@@ -316,38 +318,55 @@ export default function EventDetailsPage() {
                         </div>
                       </div>
                     </div>
-                    <div className="rounded-xl bg-[#85011b] p-3 flex flex-col gap-1">
+                    <div className="rounded-xl bg-[#85011b] p-3 flex items-start justify-between gap-4">
                       <div className="text-base font-bold text-white/90">
                         15:00 – 15:15
                       </div>
                       <div className="text-white/80 text-sm">Break</div>
                     </div>
-                    <div className="rounded-xl bg-[#85011b] p-3 flex flex-col md:flex-row gap-2 items-center">
-                      <img
-                        src="/events/HackZero/speakers/prathmesh.png"
-                        alt="Prathmesh Dharkar"
-                        className="w-auto h-full object-cover border border-white"
-                      />
-                      <div className="flex-1">
+                    <div className="rounded-xl bg-[#85011b] p-4 flex flex-col gap-4">
+                      <div className="flex items-start justify-between gap-4">
                         <div className="text-base font-bold text-white/90">
-                          15:15 – 16:15
+                          15:15 - 16:15
                         </div>
-                        <div className="text-white/90 text-sm font-semibold mt-0.5">
-                          Session by Prathmesh Dharkar{" "}
-                          <span className="text-white/60 text-xs">
-                            (Security expert and Chapter Leader at BSides
-                            Indore)
-                          </span>
+                        <div className="text-white/80 text-sm">
+                          Expert session
                         </div>
-                        <div className="text-white/80 text-xs mt-0.5">
-                          Topic:{" "}
-                          <span className="font-bold">
-                            Social Engineering: Hacking the Human Mind
-                          </span>
+                      </div>
+                      <div className="grid grid-cols-[96px_minmax(0,1fr)] items-start gap-4 sm:grid-cols-[110px_minmax(0,1fr)]">
+                        <div className="overflow-hidden rounded-lg border border-white/40 max-h-[112px]">
+                          <img
+                            src="/events/HackZero/speakers/prathmesh.png"
+                            alt="Prathmesh Dharkar"
+                            className="block h-full w-full object-cover"
+                          />
+                        </div>
+                        <div className="flex min-w-0 flex-col justify-start">
+                          <div className="text-white/90 text-sm font-semibold mt-0.5">
+                            Session by Prathmesh Dharkar{" "}
+                            <span className="text-white/60 text-xs">
+                              (Security expert and Chapter Leader at BSides
+                              Indore)
+                            </span>
+                          </div>
+                          <div className="text-white/80 text-xs mt-0.5">
+                            Topic:{" "}
+                            <span className="font-bold">
+                              Social Engineering: Hacking the Human Mind
+                            </span>
+                          </div>
+                          <a
+                            href="https://www.youtube.com/live/QdEsbX0I54M"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-3 inline-flex w-fit items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/20"
+                          >
+                            Watch it here
+                          </a>
                         </div>
                       </div>
                     </div>
-                    <div className="rounded-xl bg-[#85011b] p-3 flex flex-col gap-1">
+                    <div className="rounded-xl bg-[#85011b] p-3 flex items-start justify-between gap-4">
                       <div className="text-base font-bold text-white/90">
                         16:15 – 16:30
                       </div>
@@ -360,7 +379,7 @@ export default function EventDetailsPage() {
                 {/* Day 2 */}
                 <div className="flex flex-col items-start justify-start h-full">
                   <Heading>Day 2 - 29 March</Heading>
-                  <div className="rounded-xl bg-[#85011b] mt-8 p-3 flex flex-col gap-1 w-full">
+                  <div className="rounded-xl bg-[#85011b] mt-8 p-4 flex flex-col gap-2 w-full">
                     <div className="text-base font-bold text-white/90">
                       00:00 – 23:59
                     </div>
@@ -370,6 +389,14 @@ export default function EventDetailsPage() {
                     <div className="text-white/80 text-xs">
                       Starts at midnight and runs all day
                     </div>
+                    <a
+                      href="https://discord.gg/cXWUQk6gS"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex w-fit items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/20"
+                    >
+                      Join on Discord
+                    </a>
                   </div>
                 </div>
               </div>
