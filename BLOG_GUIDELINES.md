@@ -57,9 +57,9 @@ print("Hello, OWASP!")
 \```
 ```
 
-## 5. Adding Images
+## 5. Adding Images (Optional)
 
-If your blog post requires images (like a cover image or screenshots), place them directly inside the same folder as your `index.md` file.
+If your blog post requires images (like an optional cover image or screenshots), place them directly inside the same folder as your `index.md` file. Including a cover image is completely optional, but recommended for better presentation.
 
 For example:
 `Content/blogs/my-awesome-writeup/cover.png`
@@ -74,7 +74,7 @@ A complete blog post might look like this:
 Content/blogs/
 └── my-awesome-writeup/
     ├── index.md       # Your main content and frontmatter
-    ├── cover.png      # Cover image
+    ├── cover.png      # Cover image (Optional)
     └── screenshot.jpg # Any other image used in the blog
 ```
 

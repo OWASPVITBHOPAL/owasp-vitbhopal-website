@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { Metadata } from 'next';
 import { Clock } from 'lucide-react';
 import Header from '@/components/layout/header';
@@ -33,20 +33,6 @@ export default async function BlogIndexPage() {
                 key={post.slug}
                 className="group flex flex-col h-full bg-white/[0.02] rounded-2xl overflow-hidden border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                {post.coverImage && (
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="relative w-full h-56 block overflow-hidden"
-                  >
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/10" />
-                  </Link>
-                )}
 
                 <div className="flex flex-col flex-1 p-6 gap-4">
                   <h2 className="text-xl font-bold text-white leading-tight group-hover:text-white/90">
