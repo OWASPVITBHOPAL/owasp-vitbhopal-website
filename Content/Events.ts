@@ -176,9 +176,20 @@ export const hackZeroEvent = {
   },
 };
 
-const upCommingEvents: any[] = [];
+type EventEntry = {
+  title: string;
+  date: string;
+  description: string;
+  link: string;
+  imgUrl: string;
+  gallery?: string[];
+  time?: string;
+  [key: string]: unknown;
+};
 
-const pastEvents: any[] = [
+const upCommingEvents: EventEntry[] = [];
+
+const pastEvents: EventEntry[] = [
   hackZeroEvent,
   {
     title: "Cyber Carnival 2026",

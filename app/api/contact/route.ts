@@ -6,30 +6,15 @@ const resendApiKey = process.env.RESEND_API_KEY;
 // Only initialize if key is present to prevent build crashes
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
-function getIP(req: NextRequest): string {
-  const vercelIP = req.headers.get('x-vercel-forwarded-for');
-  if (vercelIP) {
-    return vercelIP.split(',').pop()?.trim() || '127.0.0.1';
-  }
-
-  const xff = req.headers.get('x-forwarded-for');
-  if (xff) {
-    const ips = xff.split(',').map(ip => ip.trim());
-    return ips[ips.length - 1]; // last one is usually the client
-  }
-
-  return '127.0.0.1';
-}
-
 // Helper: Proper HTML escaping
 function escapeHtml(unsafe: string): string {
   if (typeof unsafe !== 'string') return '';
   return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
 }
 
 // Helper: Validate email format

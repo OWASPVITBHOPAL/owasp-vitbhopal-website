@@ -24,7 +24,7 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
     mode = "Online",
     status = "Upcoming",
     layout = "compact",
-    detailsHref,
+    detailsHref = "/events/hackzero",
     detailsLabel = "View Details",
 }) => {
     if (layout === "detailed") {
@@ -75,8 +75,8 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
                         </p>
 
                         <div className="mt-auto flex items-center gap-2">
-                            <Button href="/events/hackzero" className="h-9 rounded-full px-4 text-xs">
-                                Register
+                            <Button href={detailsHref} className="h-9 rounded-full px-4 text-xs">
+                                {detailsLabel}
                             </Button>
                         </div>
                     </div>
@@ -140,6 +140,12 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
                 <p className="text-xs text-(--muted-text) leading-relaxed">
                     {description}
                 </p>
+
+                <div className="pt-1">
+                    <Button href={detailsHref} className="h-8 rounded-lg px-3.5 text-xs">
+                        {detailsLabel}
+                    </Button>
+                </div>
             </div>
         </div>
     );

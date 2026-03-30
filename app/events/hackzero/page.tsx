@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import localFont from "next/font/local";
 import { Bebas_Neue } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -13,7 +14,6 @@ import {
 import { Container } from "@/components/ui/container";
 import HackzeroNavbar from "@/components/layout/hackzero-navbar";
 
-const EVENT_SLUG = "hackzero";
 const staticEvent = hackZeroEvent;
 
 const specialAgent = localFont({
@@ -79,23 +79,6 @@ const SocialIcon = ({ name, size = 20 }: { name: string; size?: number }) => {
   }
 };
 
-const SectionTitle = ({
-  title,
-  subtitle,
-}: {
-  title: string;
-  subtitle?: string;
-}) => (
-  <div className="mb-5">
-    <h2 className="text-3xl md:text-4xl tracking-wide text-white [font-family:var(--font-bebas-neue)]">
-      {title}
-    </h2>
-    {subtitle ? (
-      <p className="mt-1.5 text-sm md:text-base text-white/65">{subtitle}</p>
-    ) : null}
-  </div>
-);
-
 const Heading = ({ children }: { children: ReactNode }) => (
   <div className="bg-black px-2 w-fit text-white -mb-4 uppercase text-3xl font-normal tracking-[1px] [font-family:var(--font-bebas-neue)]">
     {children}
@@ -115,9 +98,6 @@ export default function EventDetailsPage() {
   if (!event) {
     notFound();
   }
-
-  const mobileHeroImage = event.headerSmallImg ?? event.imgUrl;
-  const desktopHeroImage = event.headerLargeImg ?? event.imgUrl;
   const ctaButtonClassName =
     "flex h-10 w-auto px-7 justify-center items-center rounded-2xl bg-white font-bold text-sm         inline-flex items-center rounded-full bg-linear-to-r from-[#B1022B] to-[#660010]";
 
@@ -178,8 +158,8 @@ export default function EventDetailsPage() {
                       gradientUnits="userSpaceOnUse"
                       gradientTransform="translate(166.906 41.692) rotate(90) scale(183.69 289.399)"
                     >
-                      <stop stop-color="#B1022B" />
-                      <stop offset="1" stop-color="#660010" />
+                      <stop stopColor="#B1022B" />
+                      <stop offset="1" stopColor="#660010" />
                     </radialGradient>
                     <radialGradient
                       id="paint1_radial_194_70"
@@ -189,8 +169,8 @@ export default function EventDetailsPage() {
                       gradientUnits="userSpaceOnUse"
                       gradientTransform="translate(522.404 41.692) rotate(90) scale(183.69 295.464)"
                     >
-                      <stop stop-color="#B1022B" />
-                      <stop offset="1" stop-color="#660010" />
+                      <stop stopColor="#B1022B" />
+                      <stop offset="1" stopColor="#660010" />
                     </radialGradient>
                     <radialGradient
                       id="paint2_radial_194_70"
@@ -200,8 +180,8 @@ export default function EventDetailsPage() {
                       gradientUnits="userSpaceOnUse"
                       gradientTransform="translate(820.438 41.692) rotate(90) scale(183.69 189.756)"
                     >
-                      <stop stop-color="#B1022B" />
-                      <stop offset="1" stop-color="#660010" />
+                      <stop stopColor="#B1022B" />
+                      <stop offset="1" stopColor="#660010" />
                     </radialGradient>
                   </defs>
                 </svg>
@@ -294,11 +274,13 @@ export default function EventDetailsPage() {
                         </div>
                       </div>
                       <div className="grid grid-cols-[96px_minmax(0,1fr)] items-start gap-4 sm:grid-cols-[110px_minmax(0,1fr)]">
-                        <div className="overflow-hidden rounded-lg border border-white/40 max-h-[112px]">
-                          <img
+                        <div className="relative h-28 overflow-hidden rounded-lg border border-white/40">
+                          <Image
                             src="/events/HackZero/speakers/sourajeet.png"
                             alt="Sourajeet Majumder"
-                            className="block h-full w-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 96px, 110px"
                           />
                         </div>
                         <div className="flex min-w-0 flex-col justify-start">
@@ -334,11 +316,13 @@ export default function EventDetailsPage() {
                         </div>
                       </div>
                       <div className="grid grid-cols-[96px_minmax(0,1fr)] items-start gap-4 sm:grid-cols-[110px_minmax(0,1fr)]">
-                        <div className="overflow-hidden rounded-lg border border-white/40 max-h-[112px]">
-                          <img
+                        <div className="relative h-28 overflow-hidden rounded-lg border border-white/40">
+                          <Image
                             src="/events/HackZero/speakers/prathmesh.png"
                             alt="Prathmesh Dharkar"
-                            className="block h-full w-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 96px, 110px"
                           />
                         </div>
                         <div className="flex min-w-0 flex-col justify-start">
@@ -462,9 +446,11 @@ export default function EventDetailsPage() {
                     >
                       <div className="flex items-center justify-center overflow-hidden px-3">
                         {sponsor.logo ? (
-                          <img
+                          <Image
                             src={sponsor.logo}
                             alt={`${sponsor.name} logo`}
+                            width={160}
+                            height={64}
                             className="h-16 w-auto object-contain"
                             loading="lazy"
                             referrerPolicy="no-referrer"
@@ -489,7 +475,7 @@ export default function EventDetailsPage() {
         <section className="space-y-4">
           <Heading>Rewards</Heading>
           <div className="grid pt-8 p-4 sm:p-6 gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {event.rewards.map((reward, idx) => (
+            {event.rewards.map((reward) => (
               <article
                 key={reward.title}
                 className="group relative overflow-hidden rounded-3xl bg-[#85011b] p-5 ring-1 ring-white/15"
@@ -611,9 +597,9 @@ export default function EventDetailsPage() {
                   Quick Links
                 </h4>
                 <nav className="flex flex-col gap-1.5 md:gap-2">
-                  {footerItems.map((item, idx) => (
+                  {footerItems.map((item) => (
                     <a
-                      key={idx}
+                      key={item.href}
                       href={item.href}
                       className="text-white/60 hover:text-white text-sm transition-colors"
                     >
@@ -629,9 +615,9 @@ export default function EventDetailsPage() {
                   Resources
                 </h4>
                 <nav className="flex flex-col gap-1.5 md:gap-2">
-                  {extraFooterItems.map((item, idx) => (
+                  {extraFooterItems.map((item) => (
                     <a
-                      key={idx}
+                      key={item.href}
                       href={item.href}
                       className="text-white/60 hover:text-white text-sm transition-colors"
                     >
@@ -655,9 +641,9 @@ export default function EventDetailsPage() {
 
                 {/* Social Icons */}
                 <div className="flex flex-wrap gap-2 md:gap-3 mt-2 md:mt-4">
-                  {socialMediaLinks.map((item, idx) => (
+                  {socialMediaLinks.map((item) => (
                     <a
-                      key={idx}
+                      key={item.href}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"

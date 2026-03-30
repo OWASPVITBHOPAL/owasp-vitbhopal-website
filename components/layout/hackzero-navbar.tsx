@@ -4,7 +4,6 @@ import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/Content/LayoutElements";
 import { Container } from "../ui/container";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
 const ctaButtonClassName =
@@ -40,8 +39,8 @@ const Navbar = () => {
 
   return (
     <>
-      <Container className="flex max-w-[1440px] h-16 my-4 items-center justify-between relative z-50">
-        <Link className="h-15 text-[var(--logo)]" href="/" onClick={closeMenu}>
+      <Container className="flex max-w-360 h-16 my-4 items-center justify-between relative z-50">
+        <Link className="h-15 text-(--logo)" href="/" onClick={closeMenu}>
           <svg
             width="167"
             height="58"
@@ -64,11 +63,11 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="justify-center font-bold gap-8 hidden md:flex">
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <a
-                key={index}
+                key={item.href}
                 href={item.href}
                 className={`transition-colors hover:text-white/80 ${
                   isActive
@@ -156,11 +155,11 @@ const Navbar = () => {
             </Container>
 
             <div className="flex flex-col items-center justify-center h-[calc(100vh-5rem)] space-y-8">
-              {navItems.map((item, index) => {
+              {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <a
-                    key={index}
+                    key={item.href}
                     href={item.href}
                     className={`text-2xl font-medium transition-colors ${
                       isActive
