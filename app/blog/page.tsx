@@ -25,7 +25,7 @@ export default async function BlogIndexPage() {
 
       <div className="w-full mx-auto space-y-8 mt-12">
         {posts.length === 0 ? (
-          <p className="text-center text-white/60 text-lg">No posts yet.</p>
+          <p className="text-center text-white/60 text-lg">Comming Soon</p>
         ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
