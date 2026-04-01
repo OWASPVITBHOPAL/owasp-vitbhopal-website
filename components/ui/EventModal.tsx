@@ -3,8 +3,10 @@ import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, MapPin, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IEvent {
+  slug?: string;
   title: string;
   date: string;
   description: string;
@@ -119,6 +121,18 @@ const EventModal: React.FC<EventModalProps> = ({ isOpen, onClose, event }) => {
               <div className="text-white/80 leading-relaxed text-lg whitespace-pre-wrap">
                 {event.description}
               </div>
+
+              {event.slug && (
+                <div className="pt-2">
+                  <Link
+                    href={`/events/${event.slug}`}
+                    onClick={onClose}
+                    className="inline-flex h-10 items-center justify-center rounded-xl bg-white text-black px-6 text-sm font-bold transition hover:bg-white/90 hover:scale-105 active:scale-95"
+                  >
+                    View Full Event Details
+                  </Link>
+                </div>
+              )}
 
               {/* Gallery Section */}
               {galleryImages.length > 0 && (

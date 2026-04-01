@@ -1,184 +1,185 @@
-const upCommingEvents = [
-  {
-    slug: "hackzero",
-    title: "HackZero'26 CTF",
-    date: "28th - 29th March, 2026",
-    description:
-      "A flagship two-day cybersecurity experience by OWASP VIT Bhopal, featuring expert speaker sessions and a 24-hour national online CTF.",
-    link: "https://unstop.com/hackathons/hackzero26-ctf-vit-bhopal-university-vit-bhopal-1659473",
-    imgUrl: "/events/hackzero26.png",
-    headerSmallImg: "/events/HackZero/Header-Small.png",
-    headerLargeImg: "/events/HackZero/Header-Large.png",
-    time: "28 Mar 2026, 02:00 PM IST - 29 Mar 2026, 11:59 PM IST",
-    venue: "Online",
-    mode: "Online",
-    status: "Upcoming",
-    organizer: "OWASP VIT Bhopal Chapter",
-    host: "VIT Bhopal University",
-    teamSize: "1 - 4 Members",
-    registrationDeadline: "28 Mar 2026, 11:45 PM IST",
-    prizePool: "Vouchers and goodies worth INR 1.5 Lakhs",
-    tracks: [
-      "Quizzes & Treasure Hunt",
-      "Security Engineering",
-      "Cloud Security",
-      "Network Security",
-    ],
-    eligibility: [
-      "Engineering Students",
-      "Postgraduate",
-      "Undergraduate",
-      "School Students",
-      "Management",
-      "Medical",
-      "Law",
-      "Arts, Commerce, Sciences & Others",
-    ],
-    timeline: [
-      {
-        title: "Day 1 - Speaker Sessions",
-        start: "28 Mar 2026, 02:00 PM IST",
-        end: "28 Mar 2026, 05:00 PM IST",
-        description:
-          "Online expert sessions on Cybersecurity, Threat Intelligence, and Investigation.",
-      },
-      {
-        title: "Day 2 - Capture The Flag (CTF)",
-        start: "29 Mar 2026, 12:00 AM IST",
-        end: "29 Mar 2026, 11:59 PM IST",
-        description:
-          "24-hour online national CTF where teams solve real-world technical security challenges.",
-      },
-    ],
-    challengeDomains: [
-      "Web Exploitation",
-      "Cryptography",
-      "Reverse Engineering",
-      "Digital Forensics",
-      "Binary Exploitation (Pwn)",
-      "OSINT",
-      "Steganography",
-      "Boot2Root",
-      "Cloud Security",
-      "IoT & Hardware Security",
-      "AI/ML Security",
-    ],
-    rewards: [
-      {
-        title: "1st",
-        prize:
-          "CRTP Voucher (Altered Security), APISEC vouchers (CASA + ACP + ACP+), 12-month HackerDNA Pro, EVP voucher (Vibe Security), Defhawk PRO (3 months) + Applied Ethical Hacking certification exam.",
-      },
-      {
-        title: "2nd",
-        prize:
-          "APISEC vouchers (CASA + ACP + ACP+), EVP voucher, Defhawk PRO (2 months) + 1 month academy access, 1 month VIP membership (Hackviser).",
-      },
-      {
-        title: "3rd",
-        prize:
-          "APISEC vouchers (CASA + ACP + ACP+), EVP voucher, Defhawk PRO (1 month).",
-      },
-      {
-        title: "4th",
-        prize:
-          "1 month VIP membership (Hackviser), APISEC vouchers (CASA + ACP).",
-      },
-      {
-        title: "5th",
-        prize:
-          "Defhawk goodies pack, APISEC vouchers (CASA + ACP).",
-      },
-      {
-        title: "Best overall writeup",
-        prize: "APISEC certification voucher (ACP+).",
-      },
-      {
-        title: "Best Female Hacker",
-        prize: "1 month VIP membership (Hackviser).",
-      },
-      {
-        title: "Participation Certificate",
-        prize: "Certificates for participants.",
-      },
-    ],
-    about: [
-      "HackZero'26 is a flagship two-day cybersecurity experience by OWASP VIT Bhopal Chapter.",
-      "From learning directly from industry experts to battling in an intense 24-hour CTF challenge, HackZero is designed to test skills, creativity, and hacker mindset.",
-      "Whether you are a beginner exploring ethical hacking or an experienced security enthusiast, HackZero'26 is open for all.",
-    ],
-    sponsors: {
-      core: [
-        {
-          name: "Altered Security",
-          href: "https://www.alteredsecurity.com/",
-          logo: "/events/HackZero/sponsors/as.png",
-        },
-        {
-          name: "APISEC University",
-          href: "https://www.apisecuniversity.com/",
-          logo: "/events/HackZero/sponsors/apisec.png",
-        },
-        {
-          name: "Defhawk",
-          href: "https://defhawk.com/",
-          logo: "/events/HackZero/sponsors/defhawk.png",
-        },
-        {
-          name: "HackerDNA",
-          href: "http://hackerdna.com/",
-          logo: "/events/HackZero/sponsors/hackerdna.png",
-        },
-        {
-          name: "Hackviser",
-          href: "https://hackviser.com/",
-          logo: "/events/HackZero/sponsors/hackviser.png",
-        },
-        {
-          name: "Vibe Security",
-          href: "https://vibsecurity.com/",
-          logo: "/events/HackZero/sponsors/vs.png",
-        },
-      ],
-      community: [
-        {
-          name: "Bsides Indore",
-          href: "https://bsidesindore.in",
-          logo: "/events/HackZero/sponsors/bsides.png",
-        },
-        {
-          name: "HackwithIndia",
-          href: "https://hackwithindia.com/",
-          logo: "/events/HackZero/sponsors/hackwithindiaa.png",
-        },
-        {
-          name: "Unstop",
-          href: "https://unstop.com/",
-          logo: "/events/HackZero/sponsors/unstop.png",
-        },
-      ],
-      platform: [
-        {
-          name: "CTFd",
-          href: "http://ctfd.io/",
-          logo: "/events/HackZero/sponsors/ctfd.png",
-        },
-      ],
+export const hackZeroEvent = {
+  slug: "hackzero",
+  title: "HackZero'26 CTF",
+  date: "2026-03-28",
+  description:
+    "A flagship two-day cybersecurity experience by OWASP VIT Bhopal, featuring expert speaker sessions and a 24-hour national online CTF.",
+  link: "https://unstop.com/hackathons/hackzero26-ctf-vit-bhopal-university-vit-bhopal-1659473",
+  imgUrl: "/events/HackZero/Header-Large.png",
+  headerSmallImg: "/events/HackZero/Header-Small.png",
+  headerLargeImg: "/events/HackZero/Header-Large.png",
+  time: "28 Mar 2026, 02:00 PM IST - 29 Mar 2026, 11:59 PM IST",
+  venue: "Online",
+  mode: "Online",
+  status: "Upcoming",
+  organizer: "OWASP VIT Bhopal Chapter",
+  host: "VIT Bhopal University",
+  teamSize: "1 - 4 Members",
+  registrationDeadline: "28 Mar 2026, 11:45 PM IST",
+  prizePool: "Vouchers and goodies worth INR 1.5 Lakhs",
+  tracks: [
+    "Quizzes & Treasure Hunt",
+    "Security Engineering",
+    "Cloud Security",
+    "Network Security",
+  ],
+  eligibility: [
+    "Engineering Students",
+    "Postgraduate",
+    "Undergraduate",
+    "School Students",
+    "Management",
+    "Medical",
+    "Law",
+    "Arts, Commerce, Sciences & Others",
+  ],
+  timeline: [
+    {
+      title: "Day 1 - Speaker Sessions",
+      start: "28 Mar 2026, 02:00 PM IST",
+      end: "28 Mar 2026, 05:00 PM IST",
+      description:
+        "Online expert sessions on Cybersecurity, Threat Intelligence, and Investigation.",
     },
-    contacts: {
-      email: "owaspclub@vitbhopal.ac.in",
-      studentCoordinators: [
-        { name: "Ishaani Prashant", phone: "9967351936" },
-        { name: "Somnath Das", phone: "9630431792" },
-        { name: "Ankit Singh", phone: "7003465469" },
-        { name: "Siya Desai", phone: "9552218218" },
-      ],
-      facultyCoordinator: "Dr. D. Saravanan",
+    {
+      title: "Day 2 - Capture The Flag (CTF)",
+      start: "29 Mar 2026, 12:00 AM IST",
+      end: "29 Mar 2026, 11:59 PM IST",
+      description:
+        "24-hour online national CTF where teams solve real-world technical security challenges.",
     },
+  ],
+  challengeDomains: [
+    "Web Exploitation",
+    "Cryptography",
+    "Reverse Engineering",
+    "Digital Forensics",
+    "Binary Exploitation (Pwn)",
+    "OSINT",
+    "Steganography",
+    "Boot2Root",
+    "Cloud Security",
+    "IoT & Hardware Security",
+    "AI/ML Security",
+  ],
+  rewards: [
+    {
+      title: "1st",
+      prize:
+        "CRTP Voucher (Altered Security), APISEC vouchers (CASA + ACP + ACP+), 12-month HackerDNA Pro, EVP voucher (Vibe Security), Defhawk PRO (3 months) + Applied Ethical Hacking certification exam.",
+    },
+    {
+      title: "2nd",
+      prize:
+        "APISEC vouchers (CASA + ACP + ACP+), EVP voucher, Defhawk PRO (2 months) + 1 month academy access, 1 month VIP membership (Hackviser).",
+    },
+    {
+      title: "3rd",
+      prize:
+        "APISEC vouchers (CASA + ACP + ACP+), EVP voucher, Defhawk PRO (1 month).",
+    },
+    {
+      title: "4th",
+      prize:
+        "1 month VIP membership (Hackviser), APISEC vouchers (CASA + ACP).",
+    },
+    {
+      title: "5th",
+      prize:
+        "Defhawk goodies pack, APISEC vouchers (CASA + ACP).",
+    },
+    {
+      title: "Best overall writeup",
+      prize: "APISEC certification voucher (ACP+).",
+    },
+    {
+      title: "Best Female Hacker",
+      prize: "1 month VIP membership (Hackviser).",
+    },
+    {
+      title: "Participation Certificate",
+      prize: "Certificates for participants.",
+    },
+  ],
+  about: [
+    "HackZero'26 is a flagship two-day cybersecurity experience by OWASP VIT Bhopal Chapter.",
+    "From learning directly from industry experts to battling in an intense 24-hour CTF challenge, HackZero is designed to test skills, creativity, and hacker mindset.",
+    "Whether you are a beginner exploring ethical hacking or an experienced security enthusiast, HackZero'26 is open for all.",
+  ],
+  sponsors: {
+    core: [
+      {
+        name: "Altered Security",
+        href: "https://www.alteredsecurity.com/",
+        logo: "/events/HackZero/sponsors/as.png",
+      },
+      {
+        name: "APISEC University",
+        href: "https://www.apisecuniversity.com/",
+        logo: "/events/HackZero/sponsors/apisec.png",
+      },
+      {
+        name: "Defhawk",
+        href: "https://defhawk.com/",
+        logo: "/events/HackZero/sponsors/defhawk.png",
+      },
+      {
+        name: "HackerDNA",
+        href: "http://hackerdna.com/",
+        logo: "/events/HackZero/sponsors/hackerdna.png",
+      },
+      {
+        name: "Hackviser",
+        href: "https://hackviser.com/",
+        logo: "/events/HackZero/sponsors/hackviser.png",
+      },
+      {
+        name: "Vibe Security",
+        href: "https://vibsecurity.com/",
+        logo: "/events/HackZero/sponsors/vs.png",
+      },
+    ],
+    community: [
+      {
+        name: "Bsides Indore",
+        href: "https://bsidesindore.in",
+        logo: "/events/HackZero/sponsors/bsides.png",
+      },
+      {
+        name: "HackwithIndia",
+        href: "https://hackwithindia.com/",
+        logo: "/events/HackZero/sponsors/hackwithindiaa.png",
+      },
+      {
+        name: "Unstop",
+        href: "https://unstop.com/",
+        logo: "/events/HackZero/sponsors/unstop.png",
+      },
+    ],
+    platform: [
+      {
+        name: "CTFd",
+        href: "http://ctfd.io/",
+        logo: "/events/HackZero/sponsors/ctfd.png",
+      },
+    ],
   },
-];
+  contacts: {
+    email: "owaspclub@vitbhopal.ac.in",
+    studentCoordinators: [
+      { name: "Ishaani Prashant", phone: "9967351936" },
+      { name: "Somnath Das", phone: "9630431792" },
+      { name: "Ankit Singh", phone: "7003465469" },
+      { name: "Siya Desai", phone: "9552218218" },
+    ],
+    facultyCoordinator: "Dr. D. Saravanan",
+  },
+};
 
-const pastEvents = [
+const upCommingEvents: any[] = [];
+
+const pastEvents: any[] = [
+  hackZeroEvent,
   {
     title: "Cyber Carnival 2026",
     date: "2026-02-27",

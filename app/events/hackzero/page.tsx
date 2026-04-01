@@ -4,7 +4,7 @@ import Link from "next/link";
 import localFont from "next/font/local";
 import { Bebas_Neue } from "next/font/google";
 import { notFound } from "next/navigation";
-import { upCommingEvents } from "@/Content/Events";
+import { hackZeroEvent } from "@/Content/Events";
 import {
   extraFooterItems,
   footerItems,
@@ -14,7 +14,7 @@ import { Container } from "@/components/ui/container";
 import HackzeroNavbar from "@/components/layout/hackzero-navbar";
 
 const EVENT_SLUG = "hackzero";
-const staticEvent = upCommingEvents.find((item) => item.slug === EVENT_SLUG);
+const staticEvent = hackZeroEvent;
 
 const specialAgent = localFont({
   src: "../../../public/events/HackZero/specialagent.ttf",
