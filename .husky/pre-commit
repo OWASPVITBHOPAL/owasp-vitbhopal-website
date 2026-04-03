@@ -1,2 +1,49 @@
 #!/usr/bin/env sh
-npm run precommit
+
+RED_BG='\033[41m'
+GREEN_BG='\033[42m'
+BLACK_FG='\033[30m'
+WHITE_FG='\033[97m'
+RESET='\033[0m'
+
+run_check() {
+	label="$1"
+	shift
+	width=52
+	label_length=${#label}
+	dots_count=$((width - label_length))
+	output_file=$(mktemp)
+
+	if [ "$dots_count" -lt 2 ]; then
+		dots_count=2
+	fi
+
+	padding=$(printf '%*s' "$dots_count" '' | tr ' ' '.')
+
+	if "$@" >"$output_file" 2>&1; then
+		status_label=' PASSED '
+		status_style="${GREEN_BG}${BLACK_FG}"
+		status_code=0
+	else
+		status_code=$?
+		status_label=' FAILED '
+		status_style="${RED_BG}${WHITE_FG}"
+	fi
+
+	printf '%s%s%b%s%b\n' "$label" "$padding" "$status_style" "$status_label" "$RESET"
+	cat "$output_file"
+	rm -f "$output_file"
+
+	if [ "$status_code" -ne 0 ]; then
+		exit "$status_code"
+	fi
+}
+
+printf '\n============================================================\n'
+printf '                 PRE-COMMIT CHECKS\n'
+printf '============================================================\n'
+
+run_check "lint" ./node_modules/.bin/eslint
+run_check "typecheck" ./node_modules/.bin/tsc --noEmit
+
+printf '\n%b%s%b\n' "${GREEN_BG}${BLACK_FG}" '           ALL CHECKS PASSED           ' "${RESET}"
