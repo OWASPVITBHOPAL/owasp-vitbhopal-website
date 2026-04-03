@@ -180,8 +180,13 @@ type EventEntry = {
   title: string;
   date: string;
   description: string;
-  link: string;
+  link?: string;
   imgUrl: string;
+  slug?: string;
+  headerSmallImg?: string;
+  headerLargeImg?: string;
+  mode?: string;
+  status?: string;
   gallery?: string[];
   time?: string;
   [key: string]: unknown;
