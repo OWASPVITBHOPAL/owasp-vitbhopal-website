@@ -105,5 +105,6 @@ printf '============================================================\n'
 run_format_check
 run_check "lint" ./node_modules/.bin/eslint
 run_check "typecheck" ./node_modules/.bin/tsc --noEmit
+run_check "build" npm run build
 
 printf '\n%b%s%b\n' "${GREEN_BG}${BLACK_FG}" '           ALL CHECKS PASSED           ' "${RESET}"
