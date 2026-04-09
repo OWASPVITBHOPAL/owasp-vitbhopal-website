@@ -67,12 +67,24 @@ run_format_check() {
 		return 0
 	fi
 
-	if ./node_modules/.bin/prettier --check $(cat "$files_file") >"$output_file" 2>&1; then
-		status_code=0
+	status_code=0
+	while IFS= read -r file; do
+		if [ -z "$file" ]; then
+			continue
+		fi
+
+		if ./node_modules/.bin/prettier --write "$file" >>"$output_file" 2>&1; then
+			git add "$file"
+		else
+			status_code=$?
+			break
+		fi
+	done <"$files_file"
+
+	if [ "$status_code" -eq 0 ]; then
 		status_style="${GREEN_BG}${BLACK_FG}"
 		status_label=' PASSED '
 	else
-		status_code=$?
 		status_style="${RED_BG}${WHITE_FG}"
 		status_label=' FAILED '
 	fi
