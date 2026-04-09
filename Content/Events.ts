@@ -85,8 +85,7 @@ export const hackZeroEvent = {
     },
     {
       title: "5th",
-      prize:
-        "Defhawk goodies pack, APISEC vouchers (CASA + ACP).",
+      prize: "Defhawk goodies pack, APISEC vouchers (CASA + ACP).",
     },
     {
       title: "Best overall writeup",
@@ -176,20 +175,64 @@ export const hackZeroEvent = {
   },
 };
 
+type EventSponsor = {
+  name: string;
+  href: string;
+  logo: string;
+};
+
+type EventTimelineItem = {
+  title: string;
+  start: string;
+  end: string;
+  description: string;
+};
+
+type EventReward = {
+  title: string;
+  prize: string;
+};
+
+type EventContacts = {
+  email: string;
+  studentCoordinators: Array<{
+    name: string;
+    phone: string;
+  }>;
+  facultyCoordinator: string;
+};
+
 type EventEntry = {
+  slug?: string;
   title: string;
   date: string;
   description: string;
   link?: string;
   imgUrl: string;
-  slug?: string;
   headerSmallImg?: string;
   headerLargeImg?: string;
+  time?: string;
+  venue?: string;
   mode?: string;
   status?: string;
+  organizer?: string;
+  host?: string;
+  teamSize?: string;
+  registrationDeadline?: string;
+  prizePool?: string;
+  tracks?: string[];
+  eligibility?: string[];
+  timeline?: EventTimelineItem[];
+  challengeDomains?: string[];
+  rewards?: EventReward[];
+  about?: string[];
+  sponsors?: {
+    core: EventSponsor[];
+    community: EventSponsor[];
+    platform: EventSponsor[];
+  };
+  contacts?: EventContacts;
   gallery?: string[];
-  time?: string;
-  [key: string]: unknown;
 };
 
 const upCommingEvents: EventEntry[] = [];
@@ -260,10 +303,7 @@ const pastEvents: EventEntry[] = [
       "101 with Machine Learning & Revisiting Cyber Security” session presented by OWASP Bhopal Chapter & VIT-OWASP in Collaboration with TensorFlow Users Group Bhopal",
     link: "https://www.instagram.com/p/C6JGYRKvtKw/?img_index=1",
     imgUrl: "/events/101.JPG",
-    gallery: [
-      "/events/101.JPG",
-      "/events/101.JPG",
-    ],
+    gallery: ["/events/101.JPG", "/events/101.JPG"],
     time: "11:00 AM - 4:30 PM",
   },
   {
@@ -302,8 +342,6 @@ const pastEvents: EventEntry[] = [
     imgUrl: "/events/inaugral.JPG",
     time: "3:00 PM - 4:00 PM",
   },
-
 ];
 
 export { pastEvents, upCommingEvents };
-
