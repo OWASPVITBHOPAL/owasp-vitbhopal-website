@@ -22,7 +22,7 @@ const arrowIcon = (
 );
 
 const baseClassName =
-  "group relative flex w-full flex-col overflow-hidden rounded-[14px] bg-[#121212] shadow-md";
+  "group relative flex w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md";
 
 export default function PastSpeakerCard({
   speaker,
@@ -34,7 +34,7 @@ export default function PastSpeakerCard({
           src={speaker.image}
           alt={speaker.name}
           fill
-          className="h-full w-full object-cover"
+          className="h-full w-full rounded-2xl object-cover"
           sizes="(max-width: 768px) 100vw, 360px"
         />
       </div>

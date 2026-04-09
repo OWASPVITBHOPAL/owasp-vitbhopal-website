@@ -4,7 +4,7 @@ import PastEvents from "@/components/sections/pastEvents";
 import { pastEvents } from "@/Content/Events";
 import EventModal from "@/components/ui/EventModal";
 
-type EventType = typeof pastEvents[number];
+type EventType = (typeof pastEvents)[number];
 
 const EventsList = () => {
   const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null);
@@ -28,11 +28,11 @@ const EventsList = () => {
 
   return (
     <>
-      <div className="mt-8 sm:mt-10 md:mt-12 flex flex-col gap-6 sm:gap-7 md:gap-8">
-        {sortedEvents.map((event, idx) => (
-          <PastEvents 
-            key={idx} 
-            {...event} 
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:gap-7 md:mt-12 md:auto-rows-fr md:grid-cols-2 md:gap-8">
+        {sortedEvents.map((event) => (
+          <PastEvents
+            key={`${event.title}-${event.date}`}
+            {...event}
             onClick={() => handleEventClick(event)}
           />
         ))}

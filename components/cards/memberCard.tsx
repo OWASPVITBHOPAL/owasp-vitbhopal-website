@@ -1,68 +1,83 @@
-"use client"
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface MemberCardProps {
-    image: string;
-    name: string;
-    position?: string;
-    alt?: string;
-    href?: string;
+  image: string;
+  name: string;
+  position?: string;
+  alt?: string;
+  href?: string;
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ image, name, position, alt, href = '#' }) => {
-    const [imageSrc, setImageSrc] = useState(image || "/members/placeholder.png");
+const arrowIcon = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M7 17 17 7" />
+    <path d="M8 7h9v9" />
+  </svg>
+);
 
-    const handleImageError = () => {
-        setImageSrc("/members/placeholder.png");
-    };
+const baseClassName =
+  "group relative flex w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md";
 
-    return (
-        <Link
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${name}'s profile`}
-        >
-            <div className='md:w-63 md:h-74 w-45 h-60 border rounded-2xl border-[var(--border)] relative overflow-hidden group cursor-pointer'>
-                {/* Background Image */}
-                <Image
-                    src={imageSrc}
-                    width={252}
-                    height={296}
-                    alt={alt || name}
-                    className="w-full h-full object-cover"
-                    onError={handleImageError}
-                />
+const MemberCard: React.FC<Readonly<MemberCardProps>> = ({
+  image,
+  name,
+  position,
+  alt,
+  href = "#",
+}) => {
+  const [imageSrc, setImageSrc] = useState(image || "/members/placeholder.png");
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-50% via-transparent to-transparent" />
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <h3 className="md:text-lg text-md leading-4 font-semibold">{name}</h3>
-                            {position && (
-                                <p className="text-sm text-gray-300 opacity-80">{position}</p>
-                            )}
-                        </div>
-                        <div className="transform group-hover:translate-x-1 transition-transform duration-200">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path d="M7 17L17 7M17 7H7M17 7V17" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Link>
-    )
-}
+  const handleImageError = () => {
+    setImageSrc("/members/placeholder.png");
+  };
 
-export default MemberCard
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View ${name}'s profile`}
+      className={`${baseClassName} cursor-pointer transition-colors hover:bg-[#181818] focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:outline-none`}
+    >
+      <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+        <Image
+          src={imageSrc}
+          fill
+          alt={alt || name}
+          className="h-full w-full scale-110 rounded-2xl object-cover"
+          sizes="(max-width: 768px) 100vw, 320px"
+          onError={handleImageError}
+        />
+      </div>
+      <div className="flex items-center justify-between p-4">
+        <div className="flex flex-col gap-1.5">
+          <h3 className="text-base leading-4 font-semibold text-white md:text-lg">
+            {name}
+          </h3>
+          {position && (
+            <p className="text-sm whitespace-pre-wrap text-gray-300 opacity-80">
+              {position}
+            </p>
+          )}
+        </div>
+        <span className="shrink-0 text-white/50 transition-colors group-hover:text-white">
+          {arrowIcon}
+        </span>
+      </div>
+    </Link>
+  );
+};
+
+export default MemberCard;
