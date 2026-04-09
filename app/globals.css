@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1b1a1d;
+  --background: #0a0a0a;
   --foreground: #ffffff;
   --text-colour: #1d1d1f;
   --muted-text: #ffffff99;
@@ -28,7 +28,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     transform: scaleX(0.98);
   }
@@ -40,5 +41,7 @@ body {
 
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15), 0 0 24px rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.15),
+    0 0 24px rgba(255, 255, 255, 0.08);
 }
