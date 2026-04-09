@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "precommit": "npm run lint && npm run typecheck",
@@ -44,6 +46,8 @@
     "eslint-config-next": "15.5.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

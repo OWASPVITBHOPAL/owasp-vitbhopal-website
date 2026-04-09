@@ -39,10 +39,58 @@ run_check() {
 	fi
 }
 
+run_format_check() {
+	width=52
+	label='format'
+	label_length=${#label}
+	dots_count=$((width - label_length))
+	output_file=$(mktemp)
+	files_file=$(mktemp)
+
+	if [ "$dots_count" -lt 2 ]; then
+		dots_count=2
+	fi
+
+	padding=$(printf '%*s' "$dots_count" '' | tr ' ' '.')
+
+	git diff --cached --name-only --diff-filter=ACMR | while IFS= read -r file; do
+		case "$file" in
+			*.js|*.jsx|*.ts|*.tsx|*.mjs|*.cjs|*.json|*.md|*.mdx|*.css|*.scss|*.html|*.yml|*.yaml)
+				printf '%s\n' "$file"
+				;;
+		esac
+	done >"$files_file"
+
+	if [ ! -s "$files_file" ]; then
+		printf '%s%s%b%s%b\n' "$label" "$padding" "${GREEN_BG}${BLACK_FG}" ' PASSED ' "$RESET"
+		rm -f "$output_file" "$files_file"
+		return 0
+	fi
+
+	if ./node_modules/.bin/prettier --check $(cat "$files_file") >"$output_file" 2>&1; then
+		status_code=0
+		status_style="${GREEN_BG}${BLACK_FG}"
+		status_label=' PASSED '
+	else
+		status_code=$?
+		status_style="${RED_BG}${WHITE_FG}"
+		status_label=' FAILED '
+	fi
+
+	printf '%s%s%b%s%b\n' "$label" "$padding" "$status_style" "$status_label" "$RESET"
+	cat "$output_file"
+	rm -f "$output_file" "$files_file"
+
+	if [ "$status_code" -ne 0 ]; then
+		exit "$status_code"
+	fi
+}
+
 printf '\n============================================================\n'
 printf '                 PRE-COMMIT CHECKS\n'
 printf '============================================================\n'
 
+run_format_check
 run_check "lint" ./node_modules/.bin/eslint
 run_check "typecheck" ./node_modules/.bin/tsc --noEmit
 
