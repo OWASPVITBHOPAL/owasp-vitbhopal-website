@@ -35,19 +35,19 @@ const PastEvents: React.FC<PastEventsProps> = ({
   return (
     <button
       type="button"
-      className="group mx-auto h-full w-full cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-[#121212] text-left shadow-md transition-colors hover:bg-[#181818]"
+      className="group mx-auto h-full w-full cursor-pointer overflow-hidden rounded-3xl bg-[#121212] text-left shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] transition-colors hover:bg-[#181818]"
       onClick={onClick}
     >
       <div className="flex h-full flex-col">
         {imgUrl && (
           <div className="p-2">
-            <div className="relative aspect-video w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[calc(var(--radius-3xl)-(--spacing(2)))]">
               <Image
                 src={imageSrc}
                 alt={title}
                 width={320}
                 height={240}
-                className="h-full w-full rounded-[calc(var(--radius-2xl)-(--spacing(2)))] object-cover"
+                className="h-full w-full rounded-[calc(var(--radius-3xl)-(--spacing(2)))] object-cover"
                 onError={handleImageError}
               />
             </div>

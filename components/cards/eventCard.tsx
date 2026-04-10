@@ -8,21 +8,21 @@ const eventCard = () => {
       {upCommingEvents.map((event, idx) => (
         <div
           key={event.title + idx}
-          className="relative w-[480px] h-[144px] flex flex-col justify-between"
+          className="relative flex h-[144px] w-[480px] flex-col justify-between overflow-hidden rounded-3xl shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)]"
         >
-          <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="pointer-events-none absolute inset-0 z-0">
             <EventcardSVG />
           </div>
-          <div className="relative z-10 p-4 flex flex-col justify-between w-full h-full">
+          <div className="relative z-10 flex h-full w-full flex-col justify-between p-4">
             <div>
-              <div className="text-[26px] leading-[18px] font-bold  text-white/60 mb-2">
+              <div className="mb-2 text-[26px] leading-[18px] font-bold text-white/60">
                 {event.title}
               </div>
             </div>
-            <div className="flex flex-row justify-between items-end w-full h-full">
-              <div className="flex flex-col gap-1 mb-2">
+            <div className="flex h-full w-full flex-row items-end justify-between">
+              <div className="mb-2 flex flex-col gap-1">
                 <div className="flex flex-row items-center gap-2">
-                  <span className="text-[16px] leading-[18px] font-bold  text-white/60">
+                  <span className="text-[16px] leading-[18px] font-bold text-white/60">
                     Date:
                   </span>
                   <span className="text-[16px] leading-[18px] font-normal text-white/60 opacity-60">
@@ -38,8 +38,8 @@ const eventCard = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex justify-end w-full mb-2">
-                <button className="group relative flex items-center justify-center p-0 border-none bg-transparent cursor-pointer outline-none">
+              <div className="mb-2 flex w-full justify-end">
+                <button className="group relative flex cursor-pointer items-center justify-center border-none bg-transparent p-0 outline-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="124"
@@ -54,7 +54,7 @@ const eventCard = () => {
                       strokeWidth="3"
                     />
                   </svg>
-                  <span className="absolute inset-0 flex items-center justify-center text-black font-figtree font-bold text-[18px] tracking-[0.01em]">
+                  <span className="font-figtree absolute inset-0 flex items-center justify-center text-[18px] font-bold tracking-[0.01em] text-black">
                     Register
                   </span>
                 </button>

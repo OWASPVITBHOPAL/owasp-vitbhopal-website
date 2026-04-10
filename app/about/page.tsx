@@ -1,13 +1,10 @@
-'use client'
-import { Container } from '@/components/ui/container'
-import Header from '@/components/layout/header'
-import React from 'react'
-import { motion } from 'framer-motion'
-import { aboutContent } from '@/Content/About'
-import {
-  IconWorld,
-  IconBuildingCommunity,
-} from '@tabler/icons-react'
+"use client";
+import { Container } from "@/components/ui/container";
+import Header from "@/components/layout/header";
+import React from "react";
+import { motion } from "framer-motion";
+import { aboutContent } from "@/Content/About";
+import { IconWorld, IconBuildingCommunity } from "@tabler/icons-react";
 
 /* ─── animation helpers ─── */
 const fadeUp = {
@@ -15,59 +12,64 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' as const },
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
   }),
-}
+};
 
 /* ─── section separator ─── */
 const Separator = () => (
-  <div className='w-full border-2 my-6 md:my-8 border-dashed border-white/12' />
-)
+  <div className="my-6 w-full border-2 border-dashed border-white/12 md:my-8" />
+);
 
 /* ─── section heading ─── */
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
-  <h2 className='text-2xl md:text-3xl lg:text-4xl font-medium'>{children}</h2>
-)
+  <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl">{children}</h2>
+);
 
 /* ═══════════════════════════════════════════
    PAGE
    ═══════════════════════════════════════════ */
 export default function AboutPage() {
-  const { intro, stats, pillars, activities, owaspSection, standForTitle, whatWeDoTitle, joinCta } = aboutContent
+  const {
+    intro,
+    stats,
+    pillars,
+    activities,
+    owaspSection,
+    standForTitle,
+    whatWeDoTitle,
+    joinCta,
+  } = aboutContent;
 
   return (
-    <Container className='min-h-screen overflow-x-hidden px-4 md:px-6 lg:px-8 pb-20'>
-
+    <Container className="min-h-screen overflow-x-hidden px-4 pb-20 md:px-6 lg:px-8">
       {/* ── Section 1: Hero Header ── */}
-      <Header title={intro.title}>
-        {intro.description}
-      </Header>
+      <Header title={intro.title}>{intro.description}</Header>
 
       {/* ── Section 2: The OWASP Connection ── */}
-      <div className='mt-20 md:mt-28'>
+      <div className="mt-20 md:mt-28">
         <SectionHeading>{owaspSection.title}</SectionHeading>
         <Separator />
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12'>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           {/* left — narrative */}
           <motion.div
-            initial='hidden'
-            whileInView='visible'
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
             custom={0}
           >
-
-            <p className='text-sm md:text-base text-(--muted-text) leading-relaxed max-w-xl'>
+            <p className="max-w-xl text-sm leading-relaxed text-(--muted-text) md:text-base">
               {owaspSection.description}
             </p>
-            <div className='flex items-center gap-2 mt-6'>
-              <IconWorld className='w-4 h-4 text-white/40' />
+            <div className="mt-6 flex items-center gap-2">
+              <IconWorld className="h-4 w-4 text-white/40" />
               <a
                 href={owaspSection.linkHref}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-4'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-white/40 underline underline-offset-4 transition-colors hover:text-white/70"
               >
                 {owaspSection.linkText}
               </a>
@@ -75,24 +77,24 @@ export default function AboutPage() {
           </motion.div>
 
           {/* right — stat cards */}
-          <div className='flex flex-col gap-4'>
+          <div className="flex flex-col gap-4">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                className='rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 md:p-6'
-                initial='hidden'
-                whileInView='visible'
+                className="rounded-3xl bg-[#121212] p-5 shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] md:p-6"
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeUp}
                 custom={i + 1}
               >
-                <p className='text-xs uppercase tracking-widest text-white/30 font-medium'>
+                <p className="text-xs font-medium tracking-widest text-white/30 uppercase">
                   {stat.label}
                 </p>
-                <p className='text-3xl md:text-4xl font-bold mt-1 text-white/90'>
+                <p className="mt-1 text-3xl font-bold text-white/90 md:text-4xl">
                   {stat.value}
                 </p>
-                <p className='text-sm text-(--muted-text) mt-1'>{stat.note}</p>
+                <p className="mt-1 text-sm text-(--muted-text)">{stat.note}</p>
               </motion.div>
             ))}
           </div>
@@ -100,95 +102,92 @@ export default function AboutPage() {
       </div>
 
       {/* ── Section 3: Mission / Vision / Values ── */}
-      <div className='mt-20 md:mt-28'>
+      <div className="mt-20 md:mt-28">
         <SectionHeading>{standForTitle}</SectionHeading>
         <Separator />
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {pillars.map((pillar, i) => {
-            const Icon = pillar.icon
+            const Icon = pillar.icon;
             return (
               <motion.div
                 key={pillar.title}
-                className='rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 flex flex-col gap-4'
-                initial='hidden'
-                whileInView='visible'
+                className="flex flex-col gap-4 rounded-3xl bg-[#121212] p-6 shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] md:p-8"
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeUp}
                 custom={i}
               >
-                <Icon className='w-7 h-7 text-white/50' />
-                <p className='text-xs uppercase tracking-widest text-white/30 font-medium'>
+                <Icon className="h-7 w-7 text-white/50" />
+                <p className="text-xs font-medium tracking-widest text-white/30 uppercase">
                   {pillar.title}
                 </p>
-                <p className='text-sm md:text-base text-(--muted-text) leading-relaxed'>
+                <p className="text-sm leading-relaxed text-(--muted-text) md:text-base">
                   {pillar.body}
                 </p>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
 
       {/* ── Section 4: What We Do ── */}
-      <div className='mt-20 md:mt-28'>
+      <div className="mt-20 md:mt-28">
         <SectionHeading>{whatWeDoTitle}</SectionHeading>
         <Separator />
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {activities.map((activity, i) => {
-            const Icon = activity.icon
+            const Icon = activity.icon;
             return (
               <motion.div
                 key={activity.category}
-                className='rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 flex flex-col gap-4 hover:bg-white/[0.08] transition-colors'
-                initial='hidden'
-                whileInView='visible'
+                className="flex flex-col gap-4 rounded-3xl bg-[#121212] p-6 shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] transition-colors hover:bg-[#181818] md:p-8"
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeUp}
                 custom={i}
               >
-                <div className='flex items-center gap-3'>
-                  <div className='w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center'>
-                    <Icon className='w-5 h-5 text-white/70' />
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
+                    <Icon className="h-5 w-5 text-white/70" />
                   </div>
-                  <h3 className='text-lg md:text-xl font-semibold text-white/90'>
+                  <h3 className="text-lg font-semibold text-white/90 md:text-xl">
                     {activity.category}
                   </h3>
                 </div>
-                <p className='text-sm md:text-base text-(--muted-text) leading-relaxed'>
+                <p className="text-sm leading-relaxed text-(--muted-text) md:text-base">
                   {activity.items}
                 </p>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
 
       {/* ── Section 5: Join CTA ── */}
       <motion.div
-        className='mt-20 md:mt-28 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm md:p-12'
-        initial='hidden'
-        whileInView='visible'
+        className="mt-20 rounded-3xl bg-[#121212] p-8 text-center shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] md:mt-28 md:p-12"
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeUp}
         custom={0}
       >
-        <IconBuildingCommunity className='w-10 h-10 mx-auto mb-4 text-white/40' />
-        <h2 className='mb-4 text-2xl font-bold md:text-3xl'>
-          {joinCta.title}
-        </h2>
-        <p className='mx-auto max-w-2xl text-(--muted-text) mb-8'>
+        <IconBuildingCommunity className="mx-auto mb-4 h-10 w-10 text-white/40" />
+        <h2 className="mb-4 text-2xl font-bold md:text-3xl">{joinCta.title}</h2>
+        <p className="mx-auto mb-8 max-w-2xl text-(--muted-text)">
           {joinCta.description}
         </p>
         <a
           href={joinCta.buttonHref}
-          className='inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-medium text-black transition-transform hover:scale-105 hover:bg-gray-200'
+          className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-medium text-black transition-transform hover:scale-105 hover:bg-gray-200"
         >
           {joinCta.buttonText}
         </a>
       </motion.div>
-
     </Container>
-  )
+  );
 }

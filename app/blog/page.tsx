@@ -1,55 +1,55 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Metadata } from 'next';
-import { Clock } from 'lucide-react';
-import Header from '@/components/layout/header';
+import { Metadata } from "next";
+import { Clock } from "lucide-react";
+import Header from "@/components/layout/header";
 
-import { getAllBlogPosts } from '@/lib/blog';
-import { Container } from '@/components/ui/container';
+import { getAllBlogPosts } from "@/lib/blog";
+import { Container } from "@/components/ui/container";
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Read the latest insights, tutorials, write-ups, and updates from the OWASP VIT Bhopal cybersecurity community.',
+  title: "Blog",
+  description:
+    "Read the latest insights, tutorials, write-ups, and updates from the OWASP VIT Bhopal cybersecurity community.",
 };
 
 export default async function BlogIndexPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <Container className="px-4 md:px-6 lg:px-8 py-10 min-h-screen">
+    <Container className="min-h-screen px-4 py-10 md:px-6 lg:px-8">
       <Header title="Our Blog">
         Insights, tutorials, and updates from the OWASP VIT Bhopal community.
       </Header>
 
-      <div className='w-full border-2 my-4 border-dashed border-white/12' />
+      <div className="my-4 w-full border-2 border-dashed border-white/12" />
 
-      <div className="w-full mx-auto space-y-8 mt-12">
+      <div className="mx-auto mt-12 w-full space-y-8">
         {posts.length === 0 ? (
-          <p className="text-center text-white/60 text-lg">Comming Soon</p>
+          <p className="text-center text-lg text-white/60">Comming Soon</p>
         ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="group flex flex-col h-full bg-white/[0.02] rounded-2xl overflow-hidden border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-[#121212] shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] transition-all duration-300 hover:bg-[#181818]"
               >
-
-                <div className="flex flex-col flex-1 p-6 gap-4">
-                  <h2 className="text-xl font-bold text-white leading-tight group-hover:text-white/90">
+                <div className="flex flex-1 flex-col gap-4 p-6">
+                  <h2 className="text-xl leading-tight font-bold text-white group-hover:text-white/90">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
-                  <div className="text-sm text-neutral-400 font-medium">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric',
+                  <div className="text-sm font-medium text-neutral-400">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
                     })}
                   </div>
 
                   <div className="flex items-center gap-6 text-sm text-neutral-400">
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-neutral-500" />
+                      <Clock className="h-4 w-4 text-neutral-500" />
                       <span>{post.readTime}</span>
                     </div>
                     {post.author && (
@@ -61,7 +61,7 @@ export default async function BlogIndexPage() {
                   </div>
 
                   {post.description && (
-                    <p className="text-sm text-neutral-400 leading-relaxed line-clamp-3 mb-2">
+                    <p className="mb-2 line-clamp-3 text-sm leading-relaxed text-neutral-400">
                       {post.description}
                     </p>
                   )}
@@ -70,7 +70,7 @@ export default async function BlogIndexPage() {
                     {post.tags?.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-neutral-300 transition-colors hover:bg-white/10"
                       >
                         #{tag}
                       </span>

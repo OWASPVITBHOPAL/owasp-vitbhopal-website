@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import type { PastSpeaker } from "@/Content/Speakers";
 
@@ -22,20 +24,20 @@ const arrowIcon = (
 );
 
 const baseClassName =
-  "group relative flex w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md";
+  "group relative flex w-full flex-col overflow-hidden rounded-3xl shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] bg-[#121212]";
 
 export default function PastSpeakerCard({
   speaker,
 }: Readonly<PastSpeakerCardProps>) {
   const cardContent = (
     <>
-      <div className="p-2">
-        <div className="relative aspect-square w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10">
+      <div className="p-4">
+        <div className="relative aspect-square w-full overflow-hidden rounded-[calc(var(--radius-3xl)-(--spacing(2)))] shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01),0px_4px_5px_0px_rgba(0,0,0,0.25)]">
           <Image
             src={speaker.image}
             alt={speaker.name}
             fill
-            className="h-full w-full rounded-[calc(var(--radius-2xl)-(--spacing(2)))] object-cover"
+            className="h-full w-full scale-110 rounded-[calc(var(--radius-3xl)-(--spacing(2)))] object-cover"
             sizes="(max-width: 768px) 100vw, 360px"
           />
         </div>
@@ -65,12 +67,12 @@ export default function PastSpeakerCard({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Open ${speaker.name} profile`}
-        className={`${baseClassName} cursor-pointer transition-colors hover:bg-[#181818] focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:outline-none`}
+        className={`${baseClassName} cursor-pointer transition-colors`}
       >
         {cardContent}
       </a>
     );
   }
 
-  return <article className={baseClassName}>{cardContent}</article>;
+  return <div className={baseClassName}>{cardContent}</div>;
 }

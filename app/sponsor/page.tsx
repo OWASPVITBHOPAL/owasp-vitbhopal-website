@@ -1,15 +1,15 @@
 import React from "react";
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import Header from "@/components/layout/header";
 import { sponsors } from "@/Content/Sponsors";
 import SponsorCard from "@/components/cards/sponsorCard";
 
 export const metadata: Metadata = {
-  title: 'Sponsors',
-  description: 'Support OWASP VIT Bhopal — our sponsors help us run CTFs, workshops, and open-source security projects. Become a partner and invest in the next generation of cybersecurity engineers.',
-}
-
+  title: "Sponsors",
+  description:
+    "Support OWASP VIT Bhopal — our sponsors help us run CTFs, workshops, and open-source security projects. Become a partner and invest in the next generation of cybersecurity engineers.",
+};
 
 export default function SponsorsPage() {
   const platinumSponsors = sponsors.filter((s) => s.tier === "Platinum");
@@ -42,11 +42,11 @@ export default function SponsorsPage() {
     bronzeSponsors.length > 0;
 
   return (
-    <Container className="min-h-screen pb-20 px-4 md:px-6 lg:px-8">
+    <Container className="min-h-screen px-4 pb-20 md:px-6 lg:px-8">
       <Header title="Our Sponsors">
-        We are proud to be supported by industry leaders who share our vision for a
-        secure digital future. Their partnership enables us to deliver high-quality
-        events and training.
+        We are proud to be supported by industry leaders who share our vision
+        for a secure digital future. Their partnership enables us to deliver
+        high-quality events and training.
       </Header>
 
       <div className="mt-12">
@@ -59,24 +59,31 @@ export default function SponsorsPage() {
           </>
         ) : (
           <div className="my-16">
-            <div className="w-full border-2 border-dashed border-white/12 mb-12" />
+            <div className="mb-12 w-full border-2 border-dashed border-white/12" />
             <div className="flex flex-col items-start gap-3">
-              <p className="text-xs uppercase tracking-widest text-white/30 font-medium">Status</p>
-              <h2 className="text-4xl md:text-5xl font-medium text-white/90">Coming Soon.</h2>
-              <p className="text-sm md:text-base text-(--muted-text) max-w-lg mt-2">
-                Our sponsors list is being updated. Partnerships and sponsorships
-                for the current cycle will be announced here shortly.
+              <p className="text-xs font-medium tracking-widest text-white/30 uppercase">
+                Status
+              </p>
+              <h2 className="text-4xl font-medium text-white/90 md:text-5xl">
+                Coming Soon.
+              </h2>
+              <p className="mt-2 max-w-lg text-sm text-(--muted-text) md:text-base">
+                Our sponsors list is being updated. Partnerships and
+                sponsorships for the current cycle will be announced here
+                shortly.
               </p>
             </div>
           </div>
         )}
       </div>
 
-      <div className="mt-20 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm md:p-12">
-        <h2 className="mb-4 text-2xl font-bold md:text-3xl">Become a Sponsor</h2>
-        <p className="mx-auto max-w-2xl text-(--muted-text) mb-8">
-          Partner with OWASP VIT Bhopal to reach passionate cybersecurity enthusiasts
-          and future industry leaders.
+      <div className="mt-20 rounded-3xl bg-[#121212] p-8 text-center shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] md:p-12">
+        <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+          Become a Sponsor
+        </h2>
+        <p className="mx-auto mb-8 max-w-2xl text-(--muted-text)">
+          Partner with OWASP VIT Bhopal to reach passionate cybersecurity
+          enthusiasts and future industry leaders.
         </p>
         <a
           href="/contact"

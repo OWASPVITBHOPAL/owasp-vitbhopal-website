@@ -21,6 +21,10 @@ const extraFooterItems = [
   { name: "Report a Bug", href: "/report-bug" },
   { name: "Join Our Team", href: "/join-us" },
   { name: "Play CTF with us", href: "/play-with-us" },
+  {
+    name: "Press Kit",
+    href: "https://drive.google.com/drive/folders/1gmhtRH9Vo0lfPqaXT6QbQKx-B8jCKtby?usp=drive_link",
+  },
 ];
 
 const socialMediaLinks = [

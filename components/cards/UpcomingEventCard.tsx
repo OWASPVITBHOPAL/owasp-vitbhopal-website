@@ -29,11 +29,11 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
 }) => {
   if (layout === "detailed") {
     return (
-      <div className="group relative mt-6 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md transition-colors hover:bg-[#181818] md:mt-8">
+      <div className="group relative mt-6 w-full overflow-hidden rounded-3xl bg-[#121212] shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] transition-colors hover:bg-[#181818] md:mt-8">
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           {imgUrl && (
             <div className="p-2">
-              <div className="relative h-64 min-h-64 w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10 bg-[#111] md:h-full">
+              <div className="relative h-64 min-h-64 w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] bg-[#111] md:h-full">
                 <Image
                   src={imgUrl}
                   alt={title}
@@ -91,11 +91,11 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
   }
 
   return (
-    <div className="group relative mt-6 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md transition-colors hover:bg-[#181818] md:mt-8">
+    <div className="group relative mt-6 w-full overflow-hidden rounded-3xl bg-[#121212] shadow-[inset_2px_2px_8px_0px_rgba(255,255,255,0.05),inset_1px_0px_8px_0px_rgba(255,255,255,0.01)] transition-colors hover:bg-[#181818] md:mt-8">
       {/* Banner image — full, no trim */}
       {imgUrl && (
         <div className="p-2">
-          <div className="relative w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10 bg-[#111]">
+          <div className="relative w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] bg-[#111]">
             <Image
               src={imgUrl}
               alt={title}
