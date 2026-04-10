@@ -32,15 +32,17 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
       <div className="group relative mt-6 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md transition-colors hover:bg-[#181818] md:mt-8">
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           {imgUrl && (
-            <div className="relative h-64 min-h-64 w-full overflow-hidden bg-[#111] md:h-full">
-              <Image
-                src={imgUrl}
-                alt={title}
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 55vw"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent md:bg-linear-to-r md:from-transparent md:to-black/30" />
+            <div className="p-2">
+              <div className="relative h-64 min-h-64 w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10 bg-[#111] md:h-full">
+                <Image
+                  src={imgUrl}
+                  alt={title}
+                  fill
+                  className="rounded-[calc(var(--radius-2xl)-(--spacing(2)))] object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 55vw"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent md:bg-linear-to-r md:from-transparent md:to-black/30" />
+              </div>
             </div>
           )}
 
@@ -92,15 +94,17 @@ const UpcomingEventCard: React.FC<UpcomingEventCardProps> = ({
     <div className="group relative mt-6 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#121212] shadow-md transition-colors hover:bg-[#181818] md:mt-8">
       {/* Banner image — full, no trim */}
       {imgUrl && (
-        <div className="relative w-full overflow-hidden bg-[#111]">
-          <Image
-            src={imgUrl}
-            alt={title}
-            width={800}
-            height={300}
-            className="h-auto w-full object-contain transition-transform duration-700"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
+        <div className="p-2">
+          <div className="relative w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10 bg-[#111]">
+            <Image
+              src={imgUrl}
+              alt={title}
+              width={800}
+              height={300}
+              className="h-auto w-full rounded-[calc(var(--radius-2xl)-(--spacing(2)))] object-contain transition-transform duration-700"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         </div>
       )}
 

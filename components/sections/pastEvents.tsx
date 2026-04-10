@@ -40,15 +40,17 @@ const PastEvents: React.FC<PastEventsProps> = ({
     >
       <div className="flex h-full flex-col">
         {imgUrl && (
-          <div className="relative aspect-video w-full overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt={title}
-              width={320}
-              height={240}
-              className="h-full w-full rounded-2xl object-cover"
-              onError={handleImageError}
-            />
+          <div className="p-2">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10">
+              <Image
+                src={imageSrc}
+                alt={title}
+                width={320}
+                height={240}
+                className="h-full w-full rounded-[calc(var(--radius-2xl)-(--spacing(2)))] object-cover"
+                onError={handleImageError}
+              />
+            </div>
           </div>
         )}
 

@@ -29,14 +29,16 @@ export default function PastSpeakerCard({
 }: Readonly<PastSpeakerCardProps>) {
   const cardContent = (
     <>
-      <div className="relative aspect-square w-full overflow-hidden">
-        <Image
-          src={speaker.image}
-          alt={speaker.name}
-          fill
-          className="h-full w-full rounded-2xl object-cover"
-          sizes="(max-width: 768px) 100vw, 360px"
-        />
+      <div className="p-2">
+        <div className="relative aspect-square w-full overflow-hidden rounded-[calc(var(--radius-2xl)-(--spacing(2)))] border border-white/10">
+          <Image
+            src={speaker.image}
+            alt={speaker.name}
+            fill
+            className="h-full w-full rounded-[calc(var(--radius-2xl)-(--spacing(2)))] object-cover"
+            sizes="(max-width: 768px) 100vw, 360px"
+          />
+        </div>
       </div>
       <div className="flex items-center justify-between p-4">
         <div className="flex flex-col gap-1.5">
