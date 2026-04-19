@@ -51,23 +51,26 @@ This chapter is part of the [OWASP Foundation](https://owasp.org/), a nonprofit 
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Saurabh-2607/owasp-vitbhopal-website.git
 cd owasp-vitbhopal-website
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -84,15 +87,19 @@ npm run dev
 ## Components Overview
 
 ### HeroSection
+
 Landing section with gradient background and chapter introduction.
 
 ### EventSection
+
 Displays upcoming events with collapsible past events using hover interactions.
 
 ### Achievement
+
 Horizontal scrollable showcase of chapter achievements with consistent card styling.
 
 ### Footer
+
 Complete footer with navigation links, social media icons, contact information, and newsletter subscription.
 
 ## Content Management
@@ -118,6 +125,8 @@ The project uses Tailwind CSS with custom CSS variables for theming:
 3. Commit changes: `git commit -m 'Add your feature'`
 4. Push to branch: `git push fork feature/your-feature`
 5. Open a Pull Request
+
+If you want to contribute a blog post, please read our [Blog Guidelines](BLOG_GUIDELINES.md).
 
 ### Development Workflow
 
