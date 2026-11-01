@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { PastSpeaker } from "@/Content/Speakers";
 
 type SpeakersBigProps = {
@@ -10,6 +10,14 @@ type SpeakersBigProps = {
 
 const SpeakersBig = ({ speakers = [] }: SpeakersBigProps) => {
   const [activeSpeaker, setActiveSpeaker] = useState<PastSpeaker | null>(null);
+
+  // Smooth vertical spring tracking that locks to each speaker row center
+  const targetY = useMotionValue(120);
+  const smoothY = useSpring(targetY, {
+    stiffness: 280,
+    damping: 30,
+    mass: 0.4,
+  });
 
   if (!speakers || speakers.length === 0) return null;
 
@@ -63,59 +71,70 @@ const SpeakersBig = ({ speakers = [] }: SpeakersBigProps) => {
             </div>
 
             {/* Desktop View */}
-            <motion.div
-              layoutId={`speaker-row-${speaker.name}`}
-              className="group hidden cursor-pointer grid-cols-1 items-center gap-2 lg:grid xl:grid-cols-12"
-              onMouseEnter={() => setActiveSpeaker(speaker)}
+            <div
+              className="group hidden cursor-pointer grid-cols-1 items-center gap-2 rounded-xl px-2 py-3 transition-colors hover:bg-white/[0.02] lg:grid xl:grid-cols-12"
+              onMouseEnter={(e) => {
+                setActiveSpeaker(speaker);
+                const row = e.currentTarget;
+                targetY.set(row.offsetTop + row.offsetHeight / 2);
+              }}
             >
               {/* Left: Designation */}
-              <motion.div
-                layout
-                className="order-2 flex flex-col items-start text-left opacity-0 transition-opacity duration-300 group-hover:opacity-100 xl:order-1 xl:col-span-3"
-              >
+              <div className="order-2 flex flex-col items-start text-left opacity-0 transition-opacity duration-200 group-hover:opacity-100 xl:order-1 xl:col-span-3">
                 <span className="text-sm font-bold tracking-wide text-white/50 uppercase md:text-base">
                   {speaker.role}
                 </span>
-              </motion.div>
+              </div>
 
               {/* Middle: Name */}
               <div className="order-1 flex justify-start xl:order-2 xl:col-span-9">
-                <motion.h2
-                  layout
-                  className="text-left text-4xl font-semibold tracking-tighter text-white capitalize opacity-60 transition-all duration-300 group-hover:pl-8 group-hover:opacity-100 md:text-6xl"
-                >
+                <h2 className="text-left text-4xl font-semibold tracking-tighter text-white capitalize opacity-60 transition-all duration-200 group-hover:translate-x-6 group-hover:opacity-100 md:text-6xl">
                   {speaker.name}
-                </motion.h2>
+                </h2>
               </div>
-            </motion.div>
+            </div>
           </React.Fragment>
         ))}
       </div>
 
-      {/* Right: Absolute Image Section */}
-      <div className="pointer-events-none absolute inset-0 z-10 hidden items-center justify-end pr-4 lg:flex">
-        <AnimatePresence mode="popLayout">
-          {activeSpeaker?.image && (
-            <motion.div
-              layoutId="active-speaker-image"
-              key={activeSpeaker.name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="relative aspect-4/5 w-full max-w-75 overflow-hidden rounded-3xl bg-white/5 shadow-2xl"
-            >
+      {/* Right: Floating Image that smoothly follows the hovered speaker */}
+      <motion.div
+        className="pointer-events-none absolute top-0 right-4 z-20 hidden lg:block xl:right-8"
+        style={{
+          y: smoothY,
+          translateY: "-50%",
+        }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{
+          opacity: activeSpeaker ? 1 : 0,
+          scale: activeSpeaker ? 1 : 0.95,
+        }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+      >
+        <div className="relative aspect-4/5 w-64 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md xl:w-72">
+          {activeSpeaker && (
+            <>
               <Image
+                key={activeSpeaker.image}
                 src={activeSpeaker.image}
                 alt={activeSpeaker.name}
                 fill
-                className="object-cover grayscale-50"
-                sizes="(max-width: 768px) 100vw, 300px"
+                className="object-cover grayscale-30 transition-all duration-300 hover:grayscale-0"
+                sizes="(max-width: 1024px) 260px, 300px"
               />
-            </motion.div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+              <div className="absolute right-4 bottom-3 left-4">
+                <div className="text-base leading-tight font-semibold text-white">
+                  {activeSpeaker.name}
+                </div>
+                <div className="mt-0.5 line-clamp-2 text-xs text-white/70">
+                  {activeSpeaker.role}
+                </div>
+              </div>
+            </>
           )}
-        </AnimatePresence>
-      </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

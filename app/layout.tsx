@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 import { LayoutWrapper } from "@/components/layout/layout-wrapper";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Loader from "@/components/Loader";
+import { HeroRadialBackground } from "@/components/sections/HeroRadialBackground";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { PostHogPageView } from "@/components/PostHogPageView";
 import { Suspense } from "react";
@@ -70,21 +71,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${figtree.variable} antialiased`}
-        style={{
-          backgroundImage:
-            "repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 14px)",
-        }}
-      >
+      <body className={`${figtree.variable} bg-[#0f0f0f] antialiased`}>
         <PostHogProvider>
           <Suspense fallback={null}>
             <PostHogPageView />
           </Suspense>
           <Loader>
+            <HeroRadialBackground />
             <LayoutWrapper>
-            <SpeedInsights/>
-            <Analytics/>
+              <SpeedInsights />
+              <Analytics />
               {children}
             </LayoutWrapper>
           </Loader>
